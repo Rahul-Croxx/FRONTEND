@@ -57,7 +57,7 @@ function Stabil() {
             <p className="ih-subtitle">{t("stabil.heroSubtitle")}</p>
             <h1 className="ih-title" style={{ color: '#278644' }}>CroxX <span style={{ fontWeight: 'bold' }}>stabil</span></h1>
             <p className="ih-desc">{t("stabil.heroDesc")}</p>
-            <a href="/files/Leaflet_CroxX_stabil_Web.pdf" target="_blank" rel="noopener noreferrer" className="ih-btn-stabil">{t("common.leaflet")}</a>
+            <a href="/downloads#specialty_fertilizers" className="ih-btn-stabil">{t("common.leaflet")}</a>
           </div>
         </div>
       </div>

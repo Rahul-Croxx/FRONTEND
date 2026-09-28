@@ -22,7 +22,7 @@ const AccordionItem = ({ title, pdfs }) => {
             {pdfs.map((pdf, idx) => (
               <li key={idx}>
                 <FileText size={16} className="pdf-icon-small" />
-                <a href={`/files/${pdf.file}`} target="_blank" rel="noopener noreferrer">{pdf.name}</a>
+                <a href={pdf.file.startsWith('http') ? pdf.file : `/files/${pdf.file}`} target="_blank" rel="noopener noreferrer">{pdf.name}</a>
               </li>
             ))}
           </ul>
@@ -114,7 +114,7 @@ function Downloads() {
     {
       title: "CroxX stabil",
       pdfs: [
-        { name: "CroxX stabil 26", file: "CroxX_stabil_26.pdf" },
+        { name: "CroxX stabil 26", file: "https://croxx-fertilizer.de/files/CroxX_stabil_26.pdf" },
         { name: "CroxX stabil 12-12-17 2MgO TE", file: "CroxX_stabil_12_12_17_2MgO_TE.pdf" },
         { name: "CroxX stabil 21", file: "CroxX_stabil_21.pdf" }
       ]
@@ -160,10 +160,10 @@ function Downloads() {
           <div className="dl-accordion-wrapper">
             <AccordionItem title={t("downloads.products")} pdfs={inhibitorsData} />
             <AccordionItem title={t("downloads.leafletsInh")} pdfs={[
-              { name: `${t("common.leaflet")} – ${t("nav.inhibitors")}`, file: "Leaflet_CroxX_Inhibitors_Enhancers.pdf" },
-              { name: `${t("common.leaflet")} CroxX protectioN`, file: "Leaflet_CroxX_protectioN.pdf" },
-              { name: `${t("common.leaflet")} CroxX P-Booster`, file: "Leaflet_CroxX_P-Booster.pdf" },
-              { name: `${t("common.leaflet")} CroxX N2stabil`, file: "Leaflet_CroxX_N2stabil.pdf" }
+              { name: `${t("common.leaflet")} – ${t("nav.inhibitors")}`, file: "https://croxx-fertilizer.de/files/Leaflet_CroxX_Inhibitors_Enhancers.pdf" },
+              { name: `${t("common.leaflet")} CroxX protectioN`, file: "https://croxx-fertilizer.de/files/Leaflet_CroxX_protectioN.pdf" },
+              { name: `${t("common.leaflet")} CroxX P-Booster`, file: "https://croxx-fertilizer.de/files/Leaflet_CroxX_P-Booster.pdf" },
+              { name: `${t("common.leaflet")} CroxX N2stabil`, file: "https://croxx-fertilizer.de/files/Leaflet_CroxX_N2stabil.pdf" }
             ]} />
           </div>
         </section>

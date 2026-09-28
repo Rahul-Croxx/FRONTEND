@@ -24,6 +24,7 @@ import Footprint from './pages/Footprint';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import ProductDetail from './pages/ProductDetail';
 import Distributors from './pages/Distributors';
+import NotFound from './pages/NotFound';
 import './mobile.css'; // phone & tablet layout (loaded last so it can adjust every page)
 
 function App() {
@@ -174,6 +175,7 @@ function App() {
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/product/:category/:slug" element={<ProductDetail />} />
           <Route path="/distributors" element={<Distributors />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
 
         {/* Footer Section */}

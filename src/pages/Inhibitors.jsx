@@ -31,7 +31,7 @@ function Inhibitors() {
       name: "Uplus⁺",
       subtitle: t("inhibitors.prodSub0"),
       slug: "uplus",
-      pdf: "files/CroxX_Uplus.pdf",
+      pdf: "/files/CroxX_Uplus.pdf",
       comboLogo: "https://croxx-fertilizer.de/images/_footprint_ce.jpg",
       img: "https://croxx-fertilizer.de/images/croxx_ibc_Uplus_A1.jpg"
     },
@@ -39,7 +39,7 @@ function Inhibitors() {
       name: "Nplus⁺",
       subtitle: t("inhibitors.prodSub1"),
       slug: "nplus",
-      pdf: "files/CroxX_Nplus.pdf",
+      pdf: "/files/CroxX_Nplus.pdf",
       comboLogo: "https://croxx-fertilizer.de/images/_footprint_ce.jpg",
       img: "https://croxx-fertilizer.de/images/croxx_ibc_Nplus_A1.jpg"
     },
@@ -47,7 +47,7 @@ function Inhibitors() {
       name: "N2 stabil",
       subtitle: t("inhibitors.prodSub2"),
       slug: "n2-stabil",
-      pdf: "files/CroxX_N2_stabil.pdf",
+      pdf: "/files/CroxX_N2_stabil.pdf",
       comboLogo: "https://croxx-fertilizer.de/images/_footprint_ce.jpg",
       img: "https://croxx-fertilizer.de/images/croxx_ibc_N2_stabil_A1.jpg"
     },
@@ -55,7 +55,7 @@ function Inhibitors() {
       name: "P-Booster",
       subtitle: t("inhibitors.prodSub3"),
       slug: "p-booster",
-      pdf: "files/CroxX_P_Booster.pdf",
+      pdf: "/files/CroxX_P_Booster.pdf",
       comboLogo: "https://croxx-fertilizer.de/images/_ce.jpg",
       img: "https://croxx-fertilizer.de/images/croxx_ibc_P-Booster_A1.jpg"
     },
@@ -63,7 +63,7 @@ function Inhibitors() {
       name: "Phos-N protect",
       subtitle: t("inhibitors.prodSub4"),
       slug: "phos-n-protect",
-      pdf: "files/CroxX_Phos-N_protect.pdf",
+      pdf: "/files/CroxX_Phos-N_protect.pdf",
       comboLogo: null,
       img: "https://croxx-fertilizer.de/images/croxx_ibc_Phos-Nprotect_A1.jpg"
     },
@@ -71,7 +71,7 @@ function Inhibitors() {
       name: "protectioN",
       subtitle: t("inhibitors.prodSub5"),
       slug: "protection",
-      pdf: "files/CroxX_ProtectioN.pdf",
+      pdf: "/files/CroxX_ProtectioN.pdf",
       comboLogo: "https://croxx-fertilizer.de/images/_footprint_ce.jpg",
       img: "https://croxx-fertilizer.de/images/croxx_ibc_ProtectioN_A1.jpg"
     },
@@ -79,7 +79,7 @@ function Inhibitors() {
       name: "Double ProtectioN",
       subtitle: t("inhibitors.prodSub6"),
       slug: "double-protection",
-      pdf: "files/CroxX_Double_ProtectioN.pdf",
+      pdf: "/files/CroxX_Double_ProtectioN.pdf",
       comboLogo: "https://croxx-fertilizer.de/images/_ce.jpg",
       img: "https://croxx-fertilizer.de/images/croxx_ibc_double_protectionN_A1.jpg"
     }

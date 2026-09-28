@@ -1,0 +1,13 @@
+# Single-page app: send every address that is not a real file (e.g. /stim,
+# /product/stim/aminopower, /distributors) to index.html, so opening or refreshing
+# a page – or scanning a product QR code – never shows a 404.
+# Works on Apache / LiteSpeed hosting (e.g. Hostinger, cPanel).
+Options -MultiViews
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>

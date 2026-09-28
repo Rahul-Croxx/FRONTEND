@@ -398,5 +398,9 @@
       "karnataka": "Karnataka"
     },
     "cat": "CroxX distributors"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "desc": "Sorry, this page does not exist or has been moved. Please go back to the home page or browse our products."
   }
 }
