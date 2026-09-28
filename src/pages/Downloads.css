@@ -1,0 +1,108 @@
+.downloads-page {
+  padding-bottom: 60px;
+}
+
+.downloads-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.dl-section {
+  margin-bottom: 50px;
+}
+
+.dl-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.dl-header-icon {
+  width: 40px;
+  height: auto;
+  margin-right: 15px;
+}
+
+.dl-header h2 {
+  font-size: 32px;
+  font-weight: 400;
+  color: #000;
+  margin: 0;
+}
+
+.dl-accordion-wrapper {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #ccc;
+}
+
+.accordion-item:last-child {
+  border-bottom: none;
+}
+
+.accordion-header {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background-color: #fff;
+  transition: background-color 0.2s, color 0.2s;
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+}
+
+.accordion-header:hover {
+  background-color: #f7f9fa; /* slightly darker on hover */
+  color: #dd6f15; /* typical active brand color */
+}
+
+.accordion-header.active {
+  background-color: #fcefe6; /* light orange for active state */
+  color: #000;
+}
+
+.accordion-content {
+  padding: 20px;
+  background-color: #fff;
+}
+
+.pdf-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pdf-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.pdf-list li:last-child {
+  margin-bottom: 0;
+}
+
+.pdf-icon-small {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  margin-right: 15px;
+}
+
+.pdf-list a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  transition: color 0.2s;
+}
+
+.pdf-list a:hover {
+  color: #dd6f15;
+}

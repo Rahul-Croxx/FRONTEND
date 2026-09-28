@@ -1,0 +1,124 @@
+.privacy-policy-page {
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.privacy-hero {
+  background-color: #dd6f15;
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.privacy-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.privacy-hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.privacy-content {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.privacy-content .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.policy-box {
+  background: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.policy-box h2 {
+  color: #dd6f15;
+  font-size: 1.5rem;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.policy-box h2:first-child {
+  margin-top: 0;
+}
+
+.policy-box p {
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.policy-box ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.policy-box ul li {
+  margin-bottom: 8px;
+}
+
+.policy-box ul li strong {
+  color: #333;
+}
+
+.grievance-contact {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-left: 4px solid #dd6f15;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+.grievance-contact p {
+  margin-bottom: 5px;
+}
+
+.last-updated {
+  margin-top: 40px;
+  font-style: italic;
+  color: #888;
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #dd6f15;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+}
+
+.scroll-to-top:hover {
+  background-color: #b55a10;
+}
+
+@media (max-width: 768px) {
+  .policy-box {
+    padding: 20px;
+  }
+  .privacy-hero h1 {
+    font-size: 2rem;
+  }
+}

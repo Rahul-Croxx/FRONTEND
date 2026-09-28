@@ -1,0 +1,498 @@
+/* =====================================================================
+   Mobile & tablet layout for the whole website.
+   Loaded after all other styles; only applies below the widths set in
+   each @media rule, so the desktop design is unchanged.
+   ===================================================================== */
+
+/* Elements that exist only for the phone menu (hidden on desktop) */
+.nav-toggle,
+.nav-social-mobile {
+  display: none;
+}
+
+/* ---------- Header + phone menu (tablets and phones) ---------- */
+@media (max-width: 900px) {
+  .header-container {
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+    flex-direction: row;
+    height: 64px;
+    padding: 8px 16px;
+    gap: 12px;
+    border-bottom: 2px solid #dd6f15;
+  }
+
+  .logo-area {
+    width: 150px;
+    min-width: 0;
+  }
+
+  .logo-area img {
+    max-height: 46px;
+    object-fit: contain;
+    object-position: left center;
+  }
+
+  .header-right {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .header-right > .social-icons {
+    display: none;
+  }
+
+  .lang-selector-container {
+    margin-right: 0 !important;
+  }
+
+  .lang-toggle {
+    height: 44px;
+    padding: 0 12px;
+  }
+
+  .lang-option {
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+
+  .nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #111;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .nav-toggle:hover,
+  .nav-toggle[aria-expanded='true'] {
+    border-color: #dd6f15;
+    color: #dd6f15;
+  }
+
+  /* The menu slides down under the header and fills the screen */
+  .navbar {
+    display: none;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1999;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    border-top: none;
+    border-bottom: none;
+    background: #fff;
+  }
+
+  .navbar.is-open {
+    display: block;
+  }
+
+  body.mobile-menu-open {
+    overflow: hidden;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0 0 24px;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 16px 20px;
+    font-size: 18px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .nav-item-dropdown {
+    display: block;
+    padding: 0;
+  }
+
+  /* Sub-menus (Products, Downloads) are always open in the phone menu,
+     because hover menus cannot be opened on a touch screen */
+  .dropdown-menu,
+  .nav-item-dropdown:hover .dropdown-menu {
+    display: flex;
+    position: static;
+    min-width: 0;
+    box-shadow: none;
+    background: #fafafa;
+  }
+
+  .dropdown-item {
+    padding: 14px 20px 14px 36px;
+    font-size: 16px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .nav-social-mobile {
+    display: flex;
+    gap: 14px;
+    padding: 24px 20px 0;
+  }
+
+  .nav-social-mobile .social-icon-wrapper {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+
+  /* Product-detail language button sits below the sticky header */
+  .pd-lang-overlay {
+    z-index: 10000;
+  }
+}
+
+/* ---------- Tablets and phones: page content ---------- */
+@media (max-width: 768px) {
+  /* Home hero */
+  .hero-section {
+    min-height: 70vh;
+    min-height: 70svh;
+  }
+
+  /* Full-width banner images at the top of Downloads / CO2 Footprint */
+  .page-hero-banner {
+    height: 45vh !important;
+    min-height: 240px !important;
+    max-height: 420px;
+  }
+
+  /* About */
+  .about-section {
+    padding: 48px 16px;
+  }
+
+  .about-container {
+    gap: 40px;
+  }
+
+  .about-title {
+    font-size: 40px;
+  }
+
+  .feature-item {
+    gap: 16px;
+  }
+
+  .feature-icon {
+    min-width: 64px;
+    width: 64px;
+    height: 64px;
+  }
+
+  .feature-icon svg {
+    width: 34px;
+    height: 34px;
+  }
+
+  .feature-content h3 {
+    font-size: 22px;
+  }
+
+  /* Calculator */
+  .calc-title {
+    font-size: 34px;
+  }
+
+  .calc-container {
+    gap: 24px;
+  }
+
+  .calc-left,
+  .calc-right {
+    flex: 0 1 auto;
+    max-width: 100%;
+  }
+
+  .calc-img {
+    max-width: 100%;
+  }
+
+  /* Inhibitors banner + specialty fertilizer cards */
+  .inhibitors-section {
+    padding: 48px 16px;
+  }
+
+  .inhibitors-banner-wrapper {
+    padding-bottom: 75%;
+  }
+
+  .inhibitors-banner-content {
+    padding: 20px;
+  }
+
+  .inhibitors-banner-content h3 {
+    font-size: 26px;
+  }
+
+  .inhibitors-banner-content p {
+    font-size: 17px;
+  }
+
+  .sf-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .sf-content {
+    padding: 14px;
+  }
+
+  .sf-content h3 {
+    font-size: 22px;
+  }
+
+  .sf-content p {
+    font-size: 13px;
+  }
+
+  /* Contact */
+  .contact-section {
+    padding: 40px 16px 56px;
+  }
+
+  .contact-subtitle {
+    font-size: 18px;
+  }
+
+  .contact-title {
+    font-size: 32px;
+  }
+
+  .contact-card-inner {
+    height: 230px;
+  }
+
+  /* Category pages (Inhibitors, stim, foliar, ...) */
+  .ih-hero {
+    padding: 20px 16px 12px;
+  }
+
+  .ih-hero-img {
+    height: 240px;
+  }
+
+  .ih-hero-content {
+    padding: 28px 22px;
+  }
+
+  .ih-title {
+    font-size: 42px;
+    line-height: 1.1;
+    overflow-wrap: anywhere;
+  }
+
+  .ih-desc {
+    font-size: 16px;
+  }
+
+  .ih-products-section {
+    padding: 24px 12px 56px;
+  }
+
+  .ih-product-img-wrapper {
+    height: 260px;
+    min-height: 0;
+  }
+
+  .ih-product-card {
+    min-height: 0;
+  }
+
+  .ih-product-text {
+    padding: 24px 20px;
+  }
+
+  .ih-product-name {
+    font-size: 32px;
+    overflow-wrap: anywhere;
+  }
+
+  .ih-product-logos {
+    padding: 0 20px 24px;
+  }
+
+  .ih-categories-section {
+    padding: 32px 16px;
+  }
+
+  .ih-categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .ih-cat-pill {
+    padding: 14px 12px;
+    font-size: 15px;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+
+  .ih-cat-pill:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .ih-contact-section {
+    padding: 32px 16px 56px;
+  }
+
+  .ih-contact-left h2 {
+    font-size: 30px;
+  }
+
+  .ih-contact-left p {
+    font-size: 16px;
+  }
+
+  .ih-contact-right {
+    flex: auto;
+    width: 100%;
+  }
+
+  /* Company */
+  .company-content-container {
+    padding: 36px 16px;
+  }
+
+  .company-hero-img {
+    max-height: 300px;
+  }
+
+  /* Footer */
+  .footer-section {
+    padding: 40px 16px 32px;
+  }
+
+  .footer-container {
+    gap: 32px;
+  }
+
+  .footer-icon-wrap,
+  .footer-title {
+    margin-bottom: 14px;
+  }
+
+  .footer-list li {
+    margin-bottom: 2px;
+  }
+
+  .footer-list li a {
+    padding: 9px 0;
+  }
+
+  .footer-text a {
+    display: inline-block;
+    padding: 10px 0;
+  }
+
+  /* Product page: easier to tap "back" link */
+  .pd-back {
+    display: inline-block;
+    padding: 12px 0;
+  }
+
+  /* Back-to-top button: smaller and out of the way */
+  .back-to-top {
+    width: 44px;
+    height: 44px;
+    right: 14px;
+    bottom: 14px;
+  }
+}
+
+/* ---------- Small phones ---------- */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-subtitle {
+    font-size: 19px;
+  }
+
+  .about-title {
+    font-size: 34px;
+  }
+
+  .calc-title {
+    font-size: 30px;
+  }
+
+  .inhibitors-title {
+    font-size: 28px;
+  }
+
+  .ih-title {
+    font-size: 34px;
+  }
+
+  .ih-product-name {
+    font-size: 28px;
+  }
+
+  .ih-hero-img {
+    height: 200px;
+  }
+
+  .privacy-hero {
+    padding: 40px 16px;
+  }
+
+  .privacy-hero h1 {
+    font-size: 1.7rem;
+  }
+
+  .privacy-hero p {
+    font-size: 1rem;
+  }
+
+  .privacy-content {
+    padding: 24px 12px;
+  }
+
+  .policy-box {
+    padding: 20px 16px;
+  }
+
+  .footprint-title {
+    font-size: 28px;
+  }
+
+  .dl-header h2 {
+    font-size: 24px;
+  }
+}
+
+/* ---------- Very small phones (320px) ---------- */
+@media (max-width: 360px) {
+  .logo-area {
+    width: 120px;
+  }
+
+  .sf-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sf-card {
+    padding-bottom: 90%;
+  }
+
+  .ih-categories-grid {
+    grid-template-columns: 1fr;
+  }
+}

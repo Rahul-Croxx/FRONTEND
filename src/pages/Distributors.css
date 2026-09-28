@@ -1,0 +1,151 @@
+/* Distributors page – builds on the shared product-page styles in Inhibitors.css */
+
+.ih-product-card.dist-card {
+  min-height: 300px;
+  align-items: stretch;
+  scroll-margin-top: 90px;
+}
+
+/* State photo – every photo is shown at exactly the same size */
+.ih-product-img-wrapper.dist-img-wrapper {
+  position: relative;
+  flex: 0 0 450px;
+  align-self: stretch;
+  height: auto;
+  min-height: 300px;
+  overflow: hidden;
+  background: #dfe5e1;
+}
+
+.dist-img-wrapper .ih-product-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dist-img-tag {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  backdrop-filter: blur(2px);
+}
+
+.dist-text {
+  max-width: 640px;
+}
+
+.dist-soon {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid #f2c9a4;
+  color: #b8580c;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Distributor entries (shown once details are added in src/data/distributors.js) */
+.dist-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dist-list li {
+  padding: 16px 0;
+  border-top: 1px solid #e2e5e8;
+}
+
+.dist-list li:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.dist-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+}
+
+.dist-city {
+  font-size: 15px;
+  color: #dd6f15;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.dist-address {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #444;
+  margin-top: 6px;
+}
+
+.dist-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.dist-contacts a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  font-size: 15px;
+  color: #111;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.dist-contacts a:hover {
+  color: #dd6f15;
+}
+
+/* State buttons */
+.dist-pill {
+  border: none;
+  font: inherit;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.dist-pill svg {
+  color: #dd6f15;
+}
+
+@media (max-width: 768px) {
+  .dist-states-grid .dist-pill:first-child {
+    grid-column: auto;
+  }
+  .ih-categories-grid.dist-states-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .ih-product-card.dist-card {
+    align-items: stretch;
+  }
+  .ih-product-img-wrapper.dist-img-wrapper {
+    flex: none;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 3 / 2;
+  }
+}

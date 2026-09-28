@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body { overflow-x: hidden; }
+.lang-selector-container { position: relative; }
+.lang-toggle { display: flex; align-items: center; gap: 0.4rem; background: #fff; border: 1px solid #ccc; border-radius: 4px; padding: 0.5rem 1rem; cursor: pointer; font-weight: 600; color: #333; transition: all 0.2s; height: 35px; }
+.lang-toggle:hover { border-color: #f47d20; color: #f47d20; }
+.lang-dropdown { position: absolute; top: 100%; right: 0; margin-top: 0.5rem; background: #fff; border: 1px solid #eee; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: flex; flex-direction: column; min-width: 160px; z-index: 1000; overflow: hidden; }
+.lang-option { background: transparent; border: none; padding: 0.75rem 1.25rem; text-align: left; font-size: 0.9rem; font-weight: 500; color: #333; cursor: pointer; transition: all 0.2s; border-bottom: 1px solid #f9f9f9; }
+.lang-option:last-child { border-bottom: none; }
+.lang-option:hover { background: #fff5eb; color: #f47d20; }
+.lang-option.active { background: #f47d20; font-weight: 700; color: #fff; }
+
+/* Sections reached from the menu (e.g. /#contact) stop below the sticky header */
+#contact,
+#croxx-calculator,
+#specialty-fertilizers,
+#about {
+  scroll-margin-top: 90px;
+}
