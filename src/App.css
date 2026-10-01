@@ -798,31 +798,82 @@
   }
 }
 
-/* Germany–India ribbon in the middle of the header */
-.header-flags {
+/* Germany → India badge in the middle of the header */
+.header-badge {
   flex: 1;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2px;
+  gap: 20px;
   min-width: 0;
-  padding: 0 20px;
+  padding: 0 24px;
 }
 
-.header-flags-img {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
+.hb-flags {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.hb-flag {
+  height: 30px;
+  width: auto;
   display: block;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
-.header-flags-text {
-  font-size: 22px;
+.hb-arrow {
+  width: 30px;
+  height: 12px;
+  color: #dd6f15;
+}
+
+.hb-divider {
+  width: 1px;
+  height: 48px;
+  background: #e2e2e2;
+}
+
+.hb-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.hb-top {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: #6b6b6b;
+}
+
+.hb-bottom {
+  margin-top: 5px;
+  font-size: 24px;
   font-weight: 500;
-  color: #2b2b2b;
-  text-align: center;
-  line-height: 1.2;
+  color: #1f1f1f;
+  white-space: nowrap;
+}
+
+.hb-bottom b {
+  color: #dd6f15;
+  font-weight: 700;
+}
+
+/* Tamil, Malayalam and Kannada letters join together, so no wide letter-spacing there */
+html:not([lang="en"]) .hb-top {
+  letter-spacing: 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Medium screens: keep it compact */
+@media (max-width: 1100px) {
+  .header-badge { gap: 14px; padding: 0 12px; }
+  .hb-flag { height: 24px; }
+  .hb-bottom { font-size: 19px; }
 }
 
 /* Footer company column (CroxX India + CroxX Germany) */

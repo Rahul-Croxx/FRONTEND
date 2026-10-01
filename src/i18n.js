@@ -56,3 +56,9 @@ if (!localStorage.getItem('i18nextLng')) {
 }
 
 export default i18n;
+// Tell the browser (and screen readers / search engines) which language is shown
+const setHtmlLang = (lng) => {
+  if (typeof document !== 'undefined') document.documentElement.lang = (lng || 'en').split('-')[0];
+};
+setHtmlLang(i18n.resolvedLanguage || i18n.language);
+i18n.on('languageChanged', setHtmlLang);

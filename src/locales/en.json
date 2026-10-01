@@ -419,6 +419,8 @@
     "desc": "Sorry, this page does not exist or has been moved. Please go back to the home page or browse our products."
   },
   "header": {
-    "tagline": "German expertise, now in India"
+    "taglineTop": "German expertise",
+    "taglineIn": "Now in",
+    "taglineIndia": "India"
   }
 }

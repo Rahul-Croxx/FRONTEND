@@ -30,6 +30,51 @@ import Distributors from './pages/Distributors';
 import NotFound from './pages/NotFound';
 import './mobile.css'; // phone & tablet layout (loaded last so it can adjust every page)
 
+// Header badge: Germany → India (flags drawn to official proportions)
+function FlagGermany() {
+  return (
+    <svg viewBox="0 0 50 30" className="hb-flag" aria-hidden="true">
+      <rect width="50" height="10" fill="#000000" />
+      <rect y="10" width="50" height="10" fill="#DD0000" />
+      <rect y="20" width="50" height="10" fill="#FFCE00" />
+    </svg>
+  );
+}
+
+function FlagIndia() {
+  return (
+    <svg viewBox="0 0 45 30" className="hb-flag" aria-hidden="true">
+      <rect width="45" height="10" fill="#FF9933" />
+      <rect y="10" width="45" height="10" fill="#FFFFFF" />
+      <rect y="20" width="45" height="10" fill="#138808" />
+      <g transform="translate(22.5 15)" stroke="#000080" strokeWidth="0.45" fill="none">
+        <circle r="4.6" strokeWidth="0.7" />
+        <line x1="0" y1="0" x2="4.60" y2="0.00" /><line x1="0" y1="0" x2="4.44" y2="1.19" /><line x1="0" y1="0" x2="3.98" y2="2.30" /><line x1="0" y1="0" x2="3.25" y2="3.25" /><line x1="0" y1="0" x2="2.30" y2="3.98" /><line x1="0" y1="0" x2="1.19" y2="4.44" /><line x1="0" y1="0" x2="0.00" y2="4.60" /><line x1="0" y1="0" x2="-1.19" y2="4.44" /><line x1="0" y1="0" x2="-2.30" y2="3.98" /><line x1="0" y1="0" x2="-3.25" y2="3.25" /><line x1="0" y1="0" x2="-3.98" y2="2.30" /><line x1="0" y1="0" x2="-4.44" y2="1.19" /><line x1="0" y1="0" x2="-4.60" y2="0.00" /><line x1="0" y1="0" x2="-4.44" y2="-1.19" /><line x1="0" y1="0" x2="-3.98" y2="-2.30" /><line x1="0" y1="0" x2="-3.25" y2="-3.25" /><line x1="0" y1="0" x2="-2.30" y2="-3.98" /><line x1="0" y1="0" x2="-1.19" y2="-4.44" /><line x1="0" y1="0" x2="-0.00" y2="-4.60" /><line x1="0" y1="0" x2="1.19" y2="-4.44" /><line x1="0" y1="0" x2="2.30" y2="-3.98" /><line x1="0" y1="0" x2="3.25" y2="-3.25" /><line x1="0" y1="0" x2="3.98" y2="-2.30" /><line x1="0" y1="0" x2="4.44" y2="-1.19" />
+      </g>
+      <circle cx="22.5" cy="15" r="0.9" fill="#000080" />
+    </svg>
+  );
+}
+
+function HeaderBadge({ t }) {
+  return (
+    <div className="header-badge" aria-label={`${t("header.taglineTop")} – ${t("header.taglineIn")} ${t("header.taglineIndia")}`}>
+      <div className="hb-flags" aria-hidden="true">
+        <FlagGermany />
+        <svg className="hb-arrow" viewBox="0 0 30 12" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M1 6h26M22 1.5 27 6l-5 4.5" />
+        </svg>
+        <FlagIndia />
+      </div>
+      <span className="hb-divider" aria-hidden="true"></span>
+      <div className="hb-text" aria-hidden="true">
+        <span className="hb-top">{t("header.taglineTop")}</span>
+        <span className="hb-bottom">{t("header.taglineIn")} <b>{t("header.taglineIndia")}</b></span>
+      </div>
+    </div>
+  );
+}
+
 const SOCIAL = [
   { key: 'linkedin', label: 'LinkedIn', icon: <FaLinkedinIn />, style: { backgroundColor: '#0077b5' } },
   { key: 'facebook', label: 'Facebook', icon: <FaFacebookF />, style: { backgroundColor: '#1877F2' } },
@@ -113,10 +158,7 @@ function App() {
             </Link>
           </div>
           
-          <div className="header-flags">
-            <img src="/images/flags-germany-india.svg" alt="" className="header-flags-img" width="520" height="150" />
-            <span className="header-flags-text">{t("header.tagline")}</span>
-          </div>
+          <HeaderBadge t={t} />
 
           <div className="header-right">
             

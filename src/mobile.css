@@ -44,8 +44,8 @@
     display: none;
   }
 
-  /* No room for the ribbon in the slim phone header */
-  .header-flags {
+  /* No room for the Germany → India badge in the slim phone header */
+  .header-badge {
     display: none;
   }
 
@@ -499,5 +499,60 @@
 
   .ih-categories-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Bigger tap areas on phones (44px is the comfortable minimum) ---------- */
+@media (max-width: 768px) {
+  /* Footer links */
+  .footer-list li a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0;
+  }
+
+  .footer-text a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0;
+  }
+
+  /* Downloads page: each PDF link fills its whole row */
+  .pdf-list li {
+    align-items: center;
+    margin-bottom: 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .pdf-list li a {
+    display: block;
+    flex: 1;
+    padding: 12px 0;
+  }
+
+  /* Buttons */
+  .btn-outline,
+  .btn-outline-contact,
+  .btn-contact,
+  .ih-btn-primary,
+  .ih-btn-red,
+  .ih-btn-foliar,
+  .ih-btn-micro,
+  .ih-btn-solub,
+  .ih-btn-stabil,
+  .ih-btn-gran,
+  .ih-btn-microgran,
+  .ih-btn-cote {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Map credit: readable size */
+  .im-credit {
+    font-size: 12px;
   }
 }
