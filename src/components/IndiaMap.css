@@ -1,0 +1,100 @@
+.india-map {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.india-map svg {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.india-map-loading {
+  width: 100%;
+  aspect-ratio: 612 / 696;
+  max-width: 440px;
+}
+
+.im-state {
+  fill: #e6eaee;
+  stroke: #ffffff;
+  stroke-width: 0.8;
+  transition: fill 0.2s;
+}
+
+.im-active {
+  fill: #dd6f15;
+  stroke: #fff;
+  stroke-width: 1;
+  cursor: pointer;
+  outline: none;
+}
+
+.im-active.is-hover,
+.im-active:focus-visible {
+  fill: #b8580c;
+}
+
+.im-dot {
+  fill: #dd6f15;
+  stroke: #fff;
+  stroke-width: 2;
+  cursor: pointer;
+}
+
+.im-dot.is-hover {
+  fill: #b8580c;
+}
+
+.im-tooltip {
+  min-height: 26px;
+  margin-top: 6px;
+  font-size: 17px;
+  font-weight: 700;
+  color: #b8580c;
+}
+
+.im-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 20px;
+  font-size: 14px;
+  color: #333;
+}
+
+.im-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.im-swatch {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+}
+
+.im-swatch-on {
+  background: #dd6f15;
+}
+
+.im-swatch-off {
+  background: #e6eaee;
+  border: 1px solid #cfd6dc;
+}
+
+.im-credit {
+  margin-top: 8px;
+  font-size: 11px;
+  color: #888;
+}
+
+.im-credit a {
+  color: #888;
+}

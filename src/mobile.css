@@ -44,6 +44,11 @@
     display: none;
   }
 
+  /* No room for the ribbon in the slim phone header */
+  .header-flags {
+    display: none;
+  }
+
   .lang-selector-container {
     margin-right: 0 !important;
   }

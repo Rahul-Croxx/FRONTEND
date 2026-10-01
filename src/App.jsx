@@ -7,6 +7,9 @@ import './App.css';
 import LegacyQrRedirect from './components/LegacyQrRedirect';
 import ScrollToHash from './components/ScrollToHash';
 import { FaLinkedinIn, FaFacebookF, FaInstagram } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
+import { Phone, Mail, MapPin } from 'lucide-react';
+import { COMPANY_INDIA, COMPANY_GERMANY, SOCIAL_LINKS } from './data/contact';
 
 import Home from './pages/Home';
 import Inhibitors from './pages/Inhibitors';
@@ -26,6 +29,32 @@ import ProductDetail from './pages/ProductDetail';
 import Distributors from './pages/Distributors';
 import NotFound from './pages/NotFound';
 import './mobile.css'; // phone & tablet layout (loaded last so it can adjust every page)
+
+const SOCIAL = [
+  { key: 'linkedin', label: 'LinkedIn', icon: <FaLinkedinIn />, style: { backgroundColor: '#0077b5' } },
+  { key: 'facebook', label: 'Facebook', icon: <FaFacebookF />, style: { backgroundColor: '#1877F2' } },
+  { key: 'instagram', label: 'Instagram', icon: <FaInstagram />, style: { background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)' } },
+  { key: 'twitter', label: 'X (Twitter)', icon: <FaXTwitter />, style: { backgroundColor: '#000000' } },
+];
+
+function SocialIcons() {
+  return SOCIAL.map((s) => {
+    const href = SOCIAL_LINKS[s.key] || '#';
+    const external = href.startsWith('http');
+    return (
+      <a
+        key={s.key}
+        href={href}
+        className="social-icon-wrapper"
+        aria-label={s.label}
+        style={s.style}
+        {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+      >
+        {s.icon}
+      </a>
+    );
+  });
+}
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -84,6 +113,11 @@ function App() {
             </Link>
           </div>
           
+          <div className="header-flags">
+            <img src="/images/flags-germany-india.svg" alt="" className="header-flags-img" width="520" height="150" />
+            <span className="header-flags-text">{t("header.tagline")}</span>
+          </div>
+
           <div className="header-right">
             
                         
@@ -119,9 +153,7 @@ function App() {
             </button>
 
             <div className="social-icons">
-              <a href="#" className="social-icon-wrapper" style={{ backgroundColor: '#0077b5' }}><FaLinkedinIn /></a>
-              <a href="#" className="social-icon-wrapper" style={{ backgroundColor: '#1877F2' }}><FaFacebookF /></a>
-              <a href="#" className="social-icon-wrapper" style={{ background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)' }}><FaInstagram /></a>
+              <SocialIcons />
             </div>
           </div>
         </header>
@@ -135,7 +167,6 @@ function App() {
               <div className="dropdown-menu">
                 <Link to="/inhibitors" className="dropdown-item">{t("nav.inhibitors")}</Link>
                 <Link to="/#specialty-fertilizers" className="dropdown-item">{t("nav.specialty")}</Link>
-                <Link to="/#croxx-calculator" className="dropdown-item">{t("nav.calculator")}</Link>
               </div>
             </div>
             <Link to="/footprint" className="nav-link">{t("nav.footprint")}</Link>
@@ -150,9 +181,7 @@ function App() {
             </div>
             <Link to="/#contact" className="nav-link">{t("nav.contact")}</Link>
             <div className="nav-social-mobile">
-              <a href="#" className="social-icon-wrapper" aria-label="LinkedIn" style={{ backgroundColor: '#0077b5' }}><FaLinkedinIn /></a>
-              <a href="#" className="social-icon-wrapper" aria-label="Facebook" style={{ backgroundColor: '#1877F2' }}><FaFacebookF /></a>
-              <a href="#" className="social-icon-wrapper" aria-label="Instagram" style={{ background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)' }}><FaInstagram /></a>
+              <SocialIcons />
             </div>
           </div>
         </nav>
@@ -187,14 +216,23 @@ function App() {
                 <Building size={24} />
               </div>
               <h4 className="footer-title">{t("footer.company")}</h4>
-              <p className="footer-text">
-                <strong>CroxX GmbH &amp; Co. KG</strong><br />
-                Hafenweg 46 – 48<br />
-                48155 Münster / Germany<br />
-                <br />
-                
-                <a href="http://www.croxx-fertilizer.de">www.croxx-fertilizer.de</a>
-              </p>
+              <div className="footer-text">
+                <p><strong>{COMPANY_INDIA.brand}</strong></p>
+                <p>{COMPANY_INDIA.legalName}</p>
+                {COMPANY_INDIA.address && (
+                  <p className="footer-contact-line"><MapPin size={16} aria-hidden="true" /> <span>{COMPANY_INDIA.address}</span></p>
+                )}
+                {COMPANY_INDIA.phone && (
+                  <p className="footer-contact-line"><Phone size={16} aria-hidden="true" /> <a href={`tel:${COMPANY_INDIA.phone.replace(/\s+/g, '')}`}>{COMPANY_INDIA.phone}</a></p>
+                )}
+                {COMPANY_INDIA.email && (
+                  <p className="footer-contact-line"><Mail size={16} aria-hidden="true" /> <a href={`mailto:${COMPANY_INDIA.email}`}>{COMPANY_INDIA.email}</a></p>
+                )}
+
+                <p className="footer-germany-title">{t("footer.germanyTitle")}</p>
+                <p>{COMPANY_GERMANY.name}<br />{COMPANY_GERMANY.address}</p>
+                <p><a href={COMPANY_GERMANY.website} target="_blank" rel="noopener noreferrer">{COMPANY_GERMANY.websiteLabel}</a></p>
+              </div>
             </div>
 
             {/* Column 2: Product range */}

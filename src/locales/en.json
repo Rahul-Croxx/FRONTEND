@@ -16,7 +16,8 @@
     "productRange": "Product range",
     "moreInfo": "More information",
     "privacy": "Privacy Policy",
-    "legalNotice": "Legal Notice"
+    "legalNotice": "Legal Notice",
+    "germanyTitle": "CroxX Germany"
   },
   "home": {
     "heroTitle": "Fertilization on the right track",
@@ -66,10 +67,14 @@
     "microgranSub": "Starter<br/>Fertilizer",
     "coteTitle": "CroxX<br/><strong>cote</strong>",
     "coteSub": "Controlled Release<br/>Fertilizers",
-    "contactSub": "CroxX GmbH & Co. KG",
+    "contactSub": "Contact CroxX India",
     "contactTitle": "For more information<br/>contact us",
     "contactBtn": "Contact",
-    "calcTitle": "Calculate it.<br />Don’t estimate it."
+    "calcTitle": "Calculate it.<br />Don’t estimate it.",
+    "indiaTitle": "CroxX India",
+    "indiaText": "",
+    "germanyTitle": "CroxX Germany",
+    "germanySummary": "CroxX GmbH & Co. KG is a fertilizer company based in Münster, Germany, and part of the Wocklum Group, a chemical company established in 1820. With more than 20 years of experience, CroxX develops, produces and distributes nitrification and urease inhibitors, fertilizer enhancers and specialty fertilizers worldwide."
   },
   "lang": {
     "en": "English",
@@ -375,7 +380,9 @@
     "hoursValue": "9:00 AM to 5:00 PM (IST)",
     "s9Title": "9. Changes to this Policy",
     "s9Body": "We may update this Privacy Policy from time to time to reflect changes in legal requirements or our operational practices. The revised policy will be effective immediately upon posting on this website.",
-    "lastUpdated": "Last Updated: September 2026"
+    "lastUpdated": "Last Updated: September 2026",
+    "germanyTitle": "Privacy Notice of CroxX GmbH & Co. KG (Germany)",
+    "germanyNote": "The following privacy notice is published by CroxX GmbH & Co. KG for its website www.croxx-fertilizer.de. It is shown here in its original English version."
   },
   "productPage": {
     "description": "Product description",
@@ -395,12 +402,23 @@
     "states": {
       "tamilNadu": "Tamil Nadu",
       "kerala": "Kerala",
-      "karnataka": "Karnataka"
+      "karnataka": "Karnataka",
+      "andhraPradesh": "Andhra Pradesh",
+      "telangana": "Telangana",
+      "puducherry": "Puducherry"
     },
-    "cat": "CroxX distributors"
+    "cat": "CroxX distributors",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "mapOn": "Distributor presence",
+    "mapOff": "Other states"
   },
   "notFound": {
     "title": "Page not found",
     "desc": "Sorry, this page does not exist or has been moved. Please go back to the home page or browse our products."
+  },
+  "header": {
+    "tagline": "German expertise, now in India"
   }
 }

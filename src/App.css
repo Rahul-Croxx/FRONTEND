@@ -797,3 +797,85 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Germany–India ribbon in the middle of the header */
+.header-flags {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-width: 0;
+  padding: 0 20px;
+}
+
+.header-flags-img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  display: block;
+}
+
+.header-flags-text {
+  font-size: 22px;
+  font-weight: 500;
+  color: #2b2b2b;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* Footer company column (CroxX India + CroxX Germany) */
+.footer-text p {
+  margin: 0;
+  line-height: 1.8;
+}
+
+.footer-contact-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.footer-contact-line svg {
+  flex: 0 0 auto;
+  margin-top: 6px;
+  color: #dd6f15;
+}
+
+.footer-germany-title {
+  margin-top: 18px !important;
+  color: #dd6f15;
+  font-weight: 500;
+}
+
+/* Specialty cards: product photos fade in one after another while hovering */
+.sf-bg-product {
+  opacity: 0;
+  background-color: #fff;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center 30%;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.sf-bg-product.is-active {
+  opacity: 1;
+}
+
+.sf-card:focus-visible {
+  outline: 3px solid #dd6f15;
+  outline-offset: 3px;
+}
+
+/* About section: CroxX India / CroxX Germany blocks */
+.about-block {
+  margin-bottom: 8px;
+}
+
+.about-subtitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 10px;
+}

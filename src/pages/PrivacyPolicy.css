@@ -122,3 +122,35 @@
     font-size: 2rem;
   }
 }
+
+/* Original CroxX Germany privacy notice */
+.policy-box-germany {
+  margin-top: 40px;
+}
+
+.policy-box-germany h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #222;
+  margin: 18px 0 8px;
+}
+
+.policy-germany-title {
+  border-bottom: 2px solid #dd6f15;
+  padding-bottom: 12px;
+}
+
+.policy-germany-note {
+  font-style: italic;
+  color: #555;
+}
+
+.policy-germany-version {
+  margin-top: 0 !important;
+  margin-bottom: 10px;
+}
+
+.policy-box a {
+  color: #dd6f15;
+  word-break: break-word;
+}

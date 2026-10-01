@@ -2,6 +2,24 @@ import { useTranslation } from 'react-i18next';
 import React, { useEffect } from 'react';
 import { ChevronUp } from 'lucide-react';
 import './PrivacyPolicy.css';
+import { PRIVACY_GERMANY, PRIVACY_GERMANY_VERSION } from '../data/privacyGermany';
+
+// Turns "[text](url)" into links and line breaks into <br />
+function RichText({ text }) {
+  const lines = text.split('\n');
+  return lines.map((line, li) => {
+    const parts = [];
+    const re = /\[([^\]]+)\]\(([^)]+)\)/g;
+    let last = 0, m;
+    while ((m = re.exec(line))) {
+      if (m.index > last) parts.push(line.slice(last, m.index));
+      parts.push(<a key={m.index} href={m[2]} target="_blank" rel="noopener noreferrer">{m[1]}</a>);
+      last = re.lastIndex;
+    }
+    if (last < line.length) parts.push(line.slice(last));
+    return <React.Fragment key={li}>{parts}{li < lines.length - 1 && <br />}</React.Fragment>;
+  });
+}
 
 function PrivacyPolicy() {
   const { t } = useTranslation();
@@ -82,6 +100,19 @@ function PrivacyPolicy() {
             <p>{t("privacy.s9Body")}</p>
 
             <p className="last-updated">{t("privacy.lastUpdated")}</p>
+          </div>
+
+          {/* Original privacy notice of CroxX GmbH & Co. KG (Germany) */}
+          <div className="policy-box policy-box-germany" lang="en">
+            <h2 className="policy-germany-title">{t("privacy.germanyTitle")}</h2>
+            <p className="policy-germany-note">{t("privacy.germanyNote")}</p>
+            <p className="last-updated policy-germany-version">{PRIVACY_GERMANY_VERSION}</p>
+            {PRIVACY_GERMANY.map((b, i) => {
+              if (b.h) return <h2 key={i}>{b.h}</h2>;
+              if (b.h3) return <h3 key={i}>{b.h3}</h3>;
+              if (b.ul) return <ul key={i}>{b.ul.map((x, j) => <li key={j}>{x}</li>)}</ul>;
+              return <p key={i}><RichText text={b.p} /></p>;
+            })}
           </div>
         </div>
       </section>

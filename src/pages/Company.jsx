@@ -54,15 +54,7 @@ function Company() {
         </div>
 
         <div className="company-right">
-          <video 
-            src="https://www.w3schools.com/html/mov_bbb.mp4" 
-            autoPlay 
-            muted 
-            loop 
-            controls 
-            playsInline 
-            className="office-video"
-          />
+
           <img src="https://croxx-fertilizer.de/images/CroxX_Logo_4c_61m_100y_.svg" alt="CroxX Logo" className="croxx-logo-large" />
         </div>
       </div>

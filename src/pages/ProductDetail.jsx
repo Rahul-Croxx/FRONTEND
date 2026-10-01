@@ -23,8 +23,9 @@ const SELECT_TITLES = [
   'Select your language',
 ];
 
-// The language chosen here applies only to product pages in this browser tab/session.
-// It never changes the language of the rest of the website.
+// The language chosen in the pop-up becomes the website language (so the header
+// language button always matches what the farmer sees). The pop-up remembers the
+// choice for this browser tab so it can be highlighted next time.
 const SESSION_KEY = 'croxxProductLang';
 
 const readSessionLang = () => {
@@ -120,7 +121,25 @@ function ProductDetail() {
     setLang(code);
     setShowPicker(false);
     window.scrollTo(0, 0);
+    // keep the whole site (header, menu, footer) in the same language
+    if (i18n.resolvedLanguage !== code) {
+      i18n.changeLanguage(code);
+      try { localStorage.setItem('i18nextLng', code); } catch { /* ignore */ }
+    }
   };
+
+  // Language changed with the header's language button → update this page too
+  useEffect(() => {
+    const onChange = (lng) => {
+      const code = (lng || 'en').split('-')[0];
+      if (!['en', 'ta', 'ml', 'kn'].includes(code)) return;
+      writeSessionLang(code);
+      setLang(code);
+      setShowPicker(false);
+    };
+    i18n.on('languageChanged', onChange);
+    return () => i18n.off('languageChanged', onChange);
+  }, [i18n]);
 
   if (!product) {
     return (

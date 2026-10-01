@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { CONTACT_PHOTO, contactHref } from '../data/contact';
 import ProductQR from '../components/ProductQR';
 import { findProduct } from '../data/products';
 import React, { useEffect } from 'react';
@@ -161,10 +162,10 @@ function Micro() {
           <div className="ih-contact-left">
             <h2 dangerouslySetInnerHTML={{__html: t("inhibitors.needMore")}}></h2>
             <p dangerouslySetInnerHTML={{__html: t("inhibitors.contactDesc")}}></p>
-            <a href="#" className="btn-outline-contact">{t("inhibitors.contactBtn")}</a>
+            <a href={contactHref()} className="btn-outline-contact">{t("inhibitors.contactBtn")}</a>
           </div>
           <div className="ih-contact-right animate-on-scroll">
-            <img src="/contact_office.jpg" alt={t("inhibitors.contactBtn")} className="ih-contact-img" />
+            <img src={CONTACT_PHOTO} alt={t("inhibitors.contactBtn")} className="ih-contact-img" />
           </div>
         </div>
       </section>

@@ -1,10 +1,12 @@
-﻿import React, { useEffect } from 'react';
+﻿import React, { useEffect, useRef, useState } from 'react';
 import { ChevronUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import { MapPin, Globe, Award, Lightbulb, Leaf } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { PRODUCTS } from '../data/products';
+import { CONTACT_PHOTO, contactHref } from '../data/contact';
 import imgStim from '../assets/croxx_stim_1790246769837.jpg';
 import imgFoliar from '../assets/croxx_foliar_1790246785336.jpg';
 import imgMicro from '../assets/croxx_micro_1790246799190.jpg';
@@ -14,10 +16,61 @@ import imgGran from '../assets/croxx_gran_1790246847787.jpg';
 import imgMicrogran from '../assets/croxx_microgran_1790246860403.jpg';
 import imgCote from '../assets/croxx_cote_1790246872862.jpg';
 
+// Specialty-fertilizer card: on hover the background cycles through that range's products
+function CategoryCard({ category, image, title, subtitle, onOpen }) {
+  const productImages = PRODUCTS.filter((p) => p.category === category).map((p) => p.img);
+  const [index, setIndex] = useState(-1); // -1 = category photo
+  const timer = useRef(null);
+
+  const start = () => {
+    if (!productImages.length || timer.current) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    productImages.forEach((src) => { const im = new Image(); im.src = src; }); // preload
+    setIndex(0);
+    timer.current = setInterval(() => setIndex((i) => (i + 1) % productImages.length), 1300);
+  };
+  const stop = () => {
+    clearInterval(timer.current);
+    timer.current = null;
+    setIndex(-1);
+  };
+  useEffect(() => () => clearInterval(timer.current), []);
+
+  return (
+    <div
+      onClick={onOpen}
+      onMouseEnter={start}
+      onMouseLeave={stop}
+      onFocus={start}
+      onBlur={stop}
+      onKeyDown={(e) => { if (e.key === 'Enter') onOpen(); }}
+      role="link"
+      tabIndex={0}
+      className={`sf-card ${index >= 0 ? 'is-cycling' : ''}`}
+      style={{ display: 'block', color: 'inherit', cursor: 'pointer' }}
+    >
+      <div className="sf-bg" style={{ backgroundImage: `url(${image})` }}></div>
+      {productImages.map((src, i) => (
+        <div
+          key={src}
+          className={`sf-bg sf-bg-product ${i === index ? 'is-active' : ''}`}
+          style={{ backgroundImage: `url(${src})` }}
+          aria-hidden="true"
+        ></div>
+      ))}
+      <div className="sf-content">
+        <h3 dangerouslySetInnerHTML={{ __html: title }}></h3>
+        <p dangerouslySetInnerHTML={{ __html: subtitle }}></p>
+      </div>
+    </div>
+  );
+}
+
 function Home() {
   const navigate = useNavigate();
   const { t } = useTranslation();
-  const heroVideo = "https://videos.pexels.com/video-files/4226238/4226238-uhd_2560_1440_30fps.mp4"; // Green spring fields – Pexels (free for commercial use)
+  // Lush green rice paddies and coconut palms in Kerala – video by OvO Films, free Pexels licence
+  const heroVideo = "https://videos.pexels.com/video-files/34732818/14723619_2560_1440_60fps.mp4";
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -58,15 +111,18 @@ function Home() {
         <div className="about-container">
           <div className="about-left">
             <h2 className="about-title">{t("home.aboutTitle")}</h2>
-            <p className="about-text-bold">
-              {t("home.aboutP1")}
-            </p>
-            <p className="about-text">
-              {t("home.aboutP2")}
-            </p>
-            <p className="about-text">
-              {t("home.aboutP3")}
-            </p>
+
+            {t("home.indiaText") && (
+              <div className="about-block">
+                <h3 className="about-subtitle">{t("home.indiaTitle")}</h3>
+                <p className="about-text-bold">{t("home.indiaText")}</p>
+              </div>
+            )}
+
+            <div className="about-block">
+              <h3 className="about-subtitle">{t("home.germanyTitle")}</h3>
+              <p className="about-text">{t("home.germanySummary")}</p>
+            </div>
             <Link to="/company" className="btn-outline">{t("home.readMore")}</Link>
           </div>
 
@@ -129,20 +185,6 @@ function Home() {
         <ChevronUp size={24} color="#fff" strokeWidth={3} />
       </button>
 
-      {/* Calculate Section */}
-      <section className="calc-section" id="croxx-calculator">
-        <div className="calc-container animate-on-scroll">
-          <div className="calc-left">
-            <h2 className="calc-title" dangerouslySetInnerHTML={{__html: t("home.calcTitle")}}></h2>
-            <p className="calc-subtitle">{t("home.calcSubtitle")}</p>
-            <a href="#" className="btn-outline-calc">{t("home.calcBtn")}</a>
-          </div>
-          <div className="calc-right">
-            <img src="https://croxx-fertilizer.de/images/CroxX_Calculator_App.jpg" alt="CroxX Calculator App" className="calc-img" />
-          </div>
-        </div>
-      </section>
-
       {/* Inhibitors Section */}
       <section className="inhibitors-section">
         <div className="inhibitors-container">
@@ -161,77 +203,29 @@ function Home() {
           <h2 className="inhibitors-title bottom-title animate-on-scroll" id="specialty-fertilizers">{t("nav.specialty")}</h2>
 
           <div className="sf-grid animate-on-scroll">
-            {/* Card 1 */}
-            <div onClick={() => navigate('/stim')} className="sf-card" style={{ display: 'block', color: 'inherit', cursor: 'pointer' }}>
-              <div className="sf-bg" style={{ backgroundImage: `url(${imgStim})` }}></div>
-              <div className="sf-content">
-                <h3 dangerouslySetInnerHTML={{__html: t("home.stimTitle")}}></h3>
-                <p dangerouslySetInnerHTML={{__html: t("home.stimSub")}}></p>
-              </div>
-            </div>
+            <CategoryCard category="stim" image={imgStim} onOpen={() => navigate('/stim')}
+              title={t("home.stimTitle")} subtitle={t("home.stimSub")} />
 
-            {/* Card 2 */}
-            <div onClick={() => navigate('/foliar')} className="sf-card" style={{ display: 'block', color: 'inherit', cursor: 'pointer' }}>
-              <div className="sf-bg" style={{ backgroundImage: `url(${imgFoliar})` }}></div>
-              <div className="sf-content">
-                <h3 dangerouslySetInnerHTML={{__html: t("home.foliarTitle")}}></h3>
-                <p dangerouslySetInnerHTML={{__html: t("home.foliarSub")}}></p>
-              </div>
-            </div>
+            <CategoryCard category="foliar" image={imgFoliar} onOpen={() => navigate('/foliar')}
+              title={t("home.foliarTitle")} subtitle={t("home.foliarSub")} />
 
-            {/* Card 3 */}
-            <div onClick={() => navigate('/micro')} className="sf-card" style={{ display: 'block', color: 'inherit', cursor: 'pointer' }}>
-              <div className="sf-bg" style={{ backgroundImage: `url(${imgMicro})` }}></div>
-              <div className="sf-content">
-                <h3 dangerouslySetInnerHTML={{__html: t("home.microTitle")}}></h3>
-                <p dangerouslySetInnerHTML={{__html: t("home.microSub")}}></p>
-              </div>
-            </div>
+            <CategoryCard category="micro" image={imgMicro} onOpen={() => navigate('/micro')}
+              title={t("home.microTitle")} subtitle={t("home.microSub")} />
 
-            {/* Card 4 */}
-            <div onClick={() => navigate('/solub')} className="sf-card" style={{ display: 'block', color: 'inherit', cursor: 'pointer' }}>
-              <div className="sf-bg" style={{ backgroundImage: `url(${imgSolub})` }}></div>
-              <div className="sf-content">
-                <h3 dangerouslySetInnerHTML={{__html: t("home.solubTitle")}}></h3>
-                <p dangerouslySetInnerHTML={{__html: t("home.solubSub")}}></p>
-              </div>
-            </div>
+            <CategoryCard category="solub" image={imgSolub} onOpen={() => navigate('/solub')}
+              title={t("home.solubTitle")} subtitle={t("home.solubSub")} />
 
-            {/* Card 5 */}
-            <div onClick={() => navigate('/stabil')} className="sf-card" style={{ display: 'block', color: 'inherit', cursor: 'pointer' }}>
-              <div className="sf-bg" style={{ backgroundImage: `url(${imgStabil})` }}></div>
-              <div className="sf-content">
-                <h3 dangerouslySetInnerHTML={{__html: t("home.stabilTitle")}}></h3>
-                <p dangerouslySetInnerHTML={{__html: t("home.stabilSub")}}></p>
-              </div>
-            </div>
+            <CategoryCard category="stabil" image={imgStabil} onOpen={() => navigate('/stabil')}
+              title={t("home.stabilTitle")} subtitle={t("home.stabilSub")} />
 
-            {/* Card 6 */}
-            <div onClick={() => navigate('/gran')} className="sf-card" style={{ display: 'block', color: 'inherit', cursor: 'pointer' }}>
-              <div className="sf-bg" style={{ backgroundImage: `url(${imgGran})` }}></div>
-              <div className="sf-content">
-                <h3 dangerouslySetInnerHTML={{__html: t("home.granTitle")}}></h3>
-                <p dangerouslySetInnerHTML={{__html: t("home.granSub")}}></p>
-              </div>
-            </div>
+            <CategoryCard category="gran" image={imgGran} onOpen={() => navigate('/gran')}
+              title={t("home.granTitle")} subtitle={t("home.granSub")} />
 
-            {/* Card 7 */}
-            <div onClick={() => navigate('/microgran')} className="sf-card" style={{ display: 'block', color: 'inherit', cursor: 'pointer' }}>
-              <div className="sf-bg" style={{ backgroundImage: `url(${imgMicrogran})` }}></div>
-              <div className="sf-content">
-                <h3 dangerouslySetInnerHTML={{__html: t("home.microgranTitle")}}></h3>
-                <p dangerouslySetInnerHTML={{__html: t("home.microgranSub")}}></p>
-              </div>
-            </div>
+            <CategoryCard category="microgran" image={imgMicrogran} onOpen={() => navigate('/microgran')}
+              title={t("home.microgranTitle")} subtitle={t("home.microgranSub")} />
 
-            {/* Card 8 */}
-            <div onClick={() => navigate('/cote')} className="sf-card" style={{ display: 'block', color: 'inherit', cursor: 'pointer' }}>
-              <div className="sf-bg" style={{ backgroundImage: `url(${imgCote})` }}></div>
-              <div className="sf-content">
-                <h3 dangerouslySetInnerHTML={{__html: t("home.coteTitle")}}></h3>
-                <p dangerouslySetInnerHTML={{__html: t("home.coteSub")}}></p>
-              </div>
-            </div>
+            <CategoryCard category="cote" image={imgCote} onOpen={() => navigate('/cote')}
+              title={t("home.coteTitle")} subtitle={t("home.coteSub")} />
           </div>
         </div>
       </section>
@@ -244,9 +238,9 @@ function Home() {
           
           <div className="contact-card">
             <div className="contact-card-inner">
-              <div className="contact-bg" style={{ backgroundImage: "url('/contact_office.jpg')" }}></div>
+              <div className="contact-bg" style={{ backgroundImage: `url('${CONTACT_PHOTO}')` }}></div>
               <div className="contact-btn-wrap">
-                <a href="#" className="btn-contact">{t("home.contactBtn")}</a>
+                <a href={contactHref()} className="btn-contact">{t("home.contactBtn")}</a>
               </div>
             </div>
           </div>
