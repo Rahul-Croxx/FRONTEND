@@ -804,7 +804,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 26px;
   min-width: 0;
   padding: 0 24px;
 }
@@ -812,26 +812,26 @@
 .hb-flags {
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: 12px;
 }
 
 .hb-flag {
-  height: 30px;
+  height: 40px;
   width: auto;
   display: block;
-  border-radius: 3px;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12), 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
 .hb-arrow {
-  width: 30px;
-  height: 12px;
+  width: 40px;
+  height: 16px;
   color: #dd6f15;
 }
 
 .hb-divider {
   width: 1px;
-  height: 48px;
+  height: 62px;
   background: #e2e2e2;
 }
 
@@ -842,16 +842,16 @@
 }
 
 .hb-top {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 700;
-  letter-spacing: 2.2px;
+  letter-spacing: 2.6px;
   text-transform: uppercase;
   color: #6b6b6b;
 }
 
 .hb-bottom {
-  margin-top: 5px;
-  font-size: 24px;
+  margin-top: 6px;
+  font-size: 31px;
   font-weight: 500;
   color: #1f1f1f;
   white-space: nowrap;
@@ -865,15 +865,20 @@
 /* Tamil, Malayalam and Kannada letters join together, so no wide letter-spacing there */
 html:not([lang="en"]) .hb-top {
   letter-spacing: 0;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 500;
 }
 
-/* Medium screens: keep it compact */
-@media (max-width: 1100px) {
-  .header-badge { gap: 14px; padding: 0 12px; }
-  .hb-flag { height: 24px; }
-  .hb-bottom { font-size: 19px; }
+/* Medium screens: keep it compact so it never touches the logo or icons */
+@media (max-width: 1180px) {
+  .header-badge { gap: 16px; padding: 0 12px; }
+  .hb-flags { gap: 8px; }
+  .hb-flag { height: 30px; }
+  .hb-arrow { width: 30px; height: 12px; }
+  .hb-divider { height: 48px; }
+  .hb-top { font-size: 12px; letter-spacing: 2px; }
+  html:not([lang="en"]) .hb-top { font-size: 14px; }
+  .hb-bottom { font-size: 23px; }
 }
 
 /* Footer company column (CroxX India + CroxX Germany) */
@@ -929,4 +934,15 @@ html:not([lang="en"]) .hb-top {
   font-weight: 700;
   color: #111;
   margin: 0 0 10px;
+}
+
+/* Farmmetrix logo in the footer company column (footer is dark, so give it a light plate) */
+.footer-company-logo {
+  display: block;
+  max-width: 170px;
+  height: auto;
+  margin-bottom: 14px;
+  padding: 8px 12px;
+  background: #fff;
+  border-radius: 10px;
 }

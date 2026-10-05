@@ -24,53 +24,74 @@
   justify-content: center;
 }
 
-/* Company detail in the intro card */
-.dist-company {
-  margin-top: 6px;
-  padding: 18px 20px;
-  border-radius: 14px;
-  background: #fff5eb;
-  border: 1px solid #f6d8bd;
+/* Office / depot blocks inside a state card */
+.dist-locations {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
-.dist-company p {
+.dist-contact-via {
   margin: 0;
-  line-height: 1.6;
+  font-size: 15px;
+  color: #555;
 }
 
-.dist-company-brand {
-  font-size: 14px;
-  font-weight: 700;
-  color: #b8580c;
-  letter-spacing: 0.5px;
+.dist-location {
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid #f1e2d3;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
 }
 
-.dist-company-name {
+.dist-location p {
+  margin: 0;
+  line-height: 1.55;
+}
+
+.dist-location-name {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 19px;
+  font-size: 17px;
   font-weight: 700;
   color: #111;
+  margin-bottom: 6px !important;
 }
 
-.dist-company-line {
+.dist-location-name svg { color: #dd6f15; flex: 0 0 auto; }
+
+.dist-location-line {
   display: flex;
   align-items: flex-start;
   gap: 8px;
   margin-top: 4px !important;
-  font-size: 16px;
+  font-size: 15px;
   color: #222;
+  word-break: break-word;
 }
 
-.dist-company-line svg {
+.dist-location-line svg {
   flex: 0 0 auto;
   margin-top: 4px;
   color: #dd6f15;
 }
 
-.dist-company a {
+.dist-location a {
   color: #111;
+  text-decoration: none;
+  min-height: 0;
+}
+
+.dist-location a:hover { color: #dd6f15; text-decoration: underline; }
+
+.dist-location-gst {
+  margin-top: 8px !important;
+  font-size: 13px;
+  font-weight: 600;
+  color: #666;
+  letter-spacing: 0.3px;
 }
 
 /* State cards */
@@ -198,4 +219,16 @@
   .dist-company-name {
     font-size: 17px;
   }
+}
+
+@media (max-width: 768px) {
+  .dist-location-line {
+    align-items: center;
+  }
+  .dist-location-line a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .dist-location-line svg { margin-top: 0; }
 }

@@ -7,9 +7,9 @@ import './App.css';
 import LegacyQrRedirect from './components/LegacyQrRedirect';
 import ScrollToHash from './components/ScrollToHash';
 import { FaLinkedinIn, FaFacebookF, FaInstagram } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
+import { FaXTwitter, FaYoutube } from 'react-icons/fa6';
 import { Phone, Mail, MapPin } from 'lucide-react';
-import { COMPANY_INDIA, COMPANY_GERMANY, SOCIAL_LINKS } from './data/contact';
+import { COMPANY_INDIA, SOCIAL_LINKS } from './data/contact';
 
 import Home from './pages/Home';
 import Inhibitors from './pages/Inhibitors';
@@ -80,6 +80,7 @@ const SOCIAL = [
   { key: 'facebook', label: 'Facebook', icon: <FaFacebookF />, style: { backgroundColor: '#1877F2' } },
   { key: 'instagram', label: 'Instagram', icon: <FaInstagram />, style: { background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)' } },
   { key: 'twitter', label: 'X (Twitter)', icon: <FaXTwitter />, style: { backgroundColor: '#000000' } },
+  { key: 'youtube', label: 'YouTube', icon: <FaYoutube />, style: { backgroundColor: '#FF0000' } },
 ];
 
 function SocialIcons() {
@@ -129,7 +130,8 @@ function App() {
     { code: 'en', name: 'English' },
     { code: 'ta', name: 'தமிழ்' },
     { code: 'ml', name: 'മലയാളം' },
-    { code: 'kn', name: 'ಕನ್ನಡ' }
+    { code: 'kn', name: 'ಕನ್ನಡ' },
+    { code: 'te', name: 'తెలుగు' }
   ];
 
   const changeLanguage = (code) => {
@@ -259,8 +261,13 @@ function App() {
               </div>
               <h4 className="footer-title">{t("footer.company")}</h4>
               <div className="footer-text">
-                <p><strong>{COMPANY_INDIA.brand}</strong></p>
-                <p>{COMPANY_INDIA.legalName}</p>
+                <img
+                  src="/images/farmmetrix-logo.svg"
+                  alt={COMPANY_INDIA.legalName}
+                  className="footer-company-logo"
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                />
+                <p><strong>{COMPANY_INDIA.legalName}</strong></p>
                 {COMPANY_INDIA.address && (
                   <p className="footer-contact-line"><MapPin size={16} aria-hidden="true" /> <span>{COMPANY_INDIA.address}</span></p>
                 )}
@@ -270,10 +277,6 @@ function App() {
                 {COMPANY_INDIA.email && (
                   <p className="footer-contact-line"><Mail size={16} aria-hidden="true" /> <a href={`mailto:${COMPANY_INDIA.email}`}>{COMPANY_INDIA.email}</a></p>
                 )}
-
-                <p className="footer-germany-title">{t("footer.germanyTitle")}</p>
-                <p>{COMPANY_GERMANY.name}<br />{COMPANY_GERMANY.address}</p>
-                <p><a href={COMPANY_GERMANY.website} target="_blank" rel="noopener noreferrer">{COMPANY_GERMANY.websiteLabel}</a></p>
               </div>
             </div>
 

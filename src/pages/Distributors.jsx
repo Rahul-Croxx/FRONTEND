@@ -8,17 +8,19 @@ import IndiaMap from '../components/IndiaMap';
 import './Inhibitors.css'; // shared page layout (hero, cards, contact section)
 import './Distributors.css';
 
-// One "label: value" contact line; shows a dash until the detail is filled in
-function ContactRow({ icon, label, value, href }) {
+// One office / depot: name, address, phone, email, GSTIN (empty fields are skipped)
+function LocationBlock({ loc, t }) {
   return (
-    <div className="dist-row">
-      <span className="dist-row-icon" aria-hidden="true">{icon}</span>
-      <div>
-        <span className="dist-row-label">{label}</span>
-        <span className="dist-row-value">
-          {value ? (href ? <a href={href}>{value}</a> : value) : <span className="dist-row-empty">—</span>}
-        </span>
-      </div>
+    <div className="dist-location">
+      <p className="dist-location-name"><Building2 size={18} aria-hidden="true" /> {loc.name}</p>
+      {loc.address && <p className="dist-location-line"><MapPin size={16} aria-hidden="true" /> <span>{loc.address}</span></p>}
+      {loc.phone && (
+        <p className="dist-location-line"><Phone size={16} aria-hidden="true" /> <a href={`tel:${loc.phone.replace(/\s+/g, '')}`}>{loc.phone}</a></p>
+      )}
+      {loc.email && (
+        <p className="dist-location-line"><Mail size={16} aria-hidden="true" /> <a href={`mailto:${loc.email}`}>{loc.email}</a></p>
+      )}
+      {loc.gstin && <p className="dist-location-gst">{t('distributors.gstin')}: {loc.gstin}</p>}
     </div>
   );
 }
@@ -54,21 +56,9 @@ function Distributors() {
       <div className="ih-hero-wrapper">
         <div className="ih-hero dist-hero">
           <div className="ih-hero-content dist-hero-content">
-            <p className="ih-subtitle">{DISTRIBUTOR_STATES.map((s) => t(s.nameKey)).join(' · ')}</p>
             <h1 className="ih-title">{t('nav.distributors')}</h1>
             <p className="ih-desc">{t('distributors.intro')}</p>
 
-            <div className="dist-company">
-              <p className="dist-company-brand">{COMPANY_INDIA.brand}</p>
-              <p className="dist-company-name"><Building2 size={18} aria-hidden="true" /> {COMPANY_INDIA.legalName}</p>
-              {COMPANY_INDIA.address && <p className="dist-company-line"><MapPin size={16} aria-hidden="true" /> {COMPANY_INDIA.address}</p>}
-              {COMPANY_INDIA.phone && (
-                <p className="dist-company-line"><Phone size={16} aria-hidden="true" /> <a href={`tel:${COMPANY_INDIA.phone.replace(/\s+/g, '')}`}>{COMPANY_INDIA.phone}</a></p>
-              )}
-              {COMPANY_INDIA.email && (
-                <p className="dist-company-line"><Mail size={16} aria-hidden="true" /> <a href={`mailto:${COMPANY_INDIA.email}`}>{COMPANY_INDIA.email}</a></p>
-              )}
-            </div>
           </div>
 
           <div className="dist-map-card">
@@ -85,10 +75,7 @@ function Distributors() {
       <section className="ih-products-section">
         <div className="ih-products-container">
           {DISTRIBUTOR_STATES.map((state) => {
-            const c = state.contact || {};
-            const address = c.address || COMPANY_INDIA.address;
-            const phone = c.phone || COMPANY_INDIA.phone;
-            const email = c.email || COMPANY_INDIA.email;
+            const locations = state.locations || [];
             return (
               <div className="ih-product-card dist-card" key={state.id} id={state.id}>
                 <div className="ih-product-img-wrapper dist-img-wrapper">
@@ -103,21 +90,16 @@ function Distributors() {
                   <div className="ih-product-text dist-text">
                     <p className="ih-product-cat">{t('distributors.cat')}</p>
                     <h2 className="ih-product-name">{t(state.nameKey)}</h2>
-                    <div className="dist-rows">
-                      <ContactRow icon={<MapPin size={18} />} label={t('distributors.address')} value={address} />
-                      <ContactRow
-                        icon={<Phone size={18} />}
-                        label={t('distributors.phone')}
-                        value={phone}
-                        href={phone ? `tel:${phone.replace(/\s+/g, '')}` : undefined}
-                      />
-                      <ContactRow
-                        icon={<Mail size={18} />}
-                        label={t('distributors.email')}
-                        value={email}
-                        href={email ? `mailto:${email}` : undefined}
-                      />
-                    </div>
+                    {locations.length > 0 ? (
+                      <div className="dist-locations">
+                        {locations.map((loc) => <LocationBlock key={loc.name} loc={loc} t={t} />)}
+                      </div>
+                    ) : (
+                      <div className="dist-locations">
+                        <p className="dist-contact-via">{t('distributors.contactVia')}</p>
+                        <LocationBlock loc={{ name: COMPANY_INDIA.legalName, address: COMPANY_INDIA.address, phone: COMPANY_INDIA.phone, email: COMPANY_INDIA.email }} t={t} />
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

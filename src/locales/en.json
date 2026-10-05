@@ -72,7 +72,7 @@
     "contactBtn": "Contact",
     "calcTitle": "Calculate it.<br />Don’t estimate it.",
     "indiaTitle": "CroxX India",
-    "indiaText": "",
+    "indiaText": "CroxX India brings CroxX’s German fertilizer expertise to Indian agriculture, working closely with our partners and farmers to address local crop needs and growing conditions. Our portfolio includes water-soluble and specialty fertilizers, micronutrients, biostimulants, nitrogen stabilizers, nutrient enhancers and controlled-release fertilizers. Through field visits, demonstrations and practical crop guidance, we support growers across crops such as pomegranates, tomatoes, grapes, apples and flowers. We value the trust of our partners and look forward to growing together.",
     "germanyTitle": "CroxX Germany",
     "germanySummary": "CroxX GmbH & Co. KG is a fertilizer company based in Münster, Germany, and part of the Wocklum Group, a chemical company established in 1820. With more than 20 years of experience, CroxX develops, produces and distributes nitrification and urease inhibitors, fertilizer enhancers and specialty fertilizers worldwide."
   },
@@ -412,7 +412,9 @@
     "phone": "Phone",
     "email": "Email",
     "mapOn": "Distributor presence",
-    "mapOff": "Other states"
+    "mapOff": "Other states",
+    "contactVia": "For enquiries in this state, please contact:",
+    "gstin": "GSTIN"
   },
   "notFound": {
     "title": "Page not found",

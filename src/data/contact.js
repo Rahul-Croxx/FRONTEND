@@ -6,10 +6,10 @@
 
 export const COMPANY_INDIA = {
   brand: 'CroxX India',
-  legalName: 'Farmmatrix India Private Limited',
-  address: '', // e.g. 'No. 12, Main Road, Chennai 600001, Tamil Nadu'
-  phone: '',   // e.g. '+91 98765 43210'
-  email: '',   // e.g. 'info@croxx.in'
+  legalName: 'Farmmetrix India Private Limited',
+  address: 'Sy.No: 60/3B1, 61/1A1A2 and 64/11B, KMR Avenue, Janapanchatram Koot Road, Alinjivakkam, Chennai, Tiruvallur, Tamil Nadu 600067',
+  phone: '+91 93840 54859',
+  email: '', // e.g. 'info@croxx.in' – shown in the footer and used by "Contact" buttons once filled in
 };
 
 export const COMPANY_GERMANY = {
@@ -25,6 +25,7 @@ export const SOCIAL_LINKS = {
   facebook: '#',
   instagram: '#',
   twitter: '#',
+  youtube: '#',
 };
 
 // Photo used behind the "Contact" sections (rice fields with palm trees, Hampi, Karnataka –
@@ -32,5 +33,9 @@ export const SOCIAL_LINKS = {
 export const CONTACT_PHOTO =
   'https://images.pexels.com/photos/14721502/pexels-photo-14721502.jpeg?auto=compress&cs=tinysrgb&w=1000&h=680&fit=crop';
 
-// Link for "Contact" buttons: e-mail when available, otherwise the distributors page.
-export const contactHref = () => (COMPANY_INDIA.email ? `mailto:${COMPANY_INDIA.email}` : '/distributors');
+// Link for "Contact" buttons: e-mail when available, otherwise a phone call, otherwise the distributors page.
+export const contactHref = () => {
+  if (COMPANY_INDIA.email) return `mailto:${COMPANY_INDIA.email}`;
+  if (COMPANY_INDIA.phone) return `tel:${COMPANY_INDIA.phone.replace(/\s+/g, '')}`;
+  return '/distributors';
+};

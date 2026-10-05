@@ -7,19 +7,23 @@ import en from './locales/en.json';
 import ta from './locales/ta.json';
 import ml from './locales/ml.json';
 import kn from './locales/kn.json';
+import te from './locales/te.json';
 
 const resources = {
   en: { translation: en },
   ta: { translation: ta },
   ml: { translation: ml },
-  kn: { translation: kn }
+  kn: { translation: kn },
+  te: { translation: te }
 };
 
 const stateLanguageMap = {
   'Tamil Nadu': 'ta',
   'Puducherry': 'ta',
   'Kerala': 'ml',
-  'Karnataka': 'kn'
+  'Karnataka': 'kn',
+  'Andhra Pradesh': 'te',
+  'Telangana': 'te'
 };
 
 i18n
@@ -28,7 +32,7 @@ i18n
   .init({
     resources,
     fallbackLng: 'en',
-    supportedLngs: ['en', 'ta', 'ml', 'kn'],
+    supportedLngs: ['en', 'ta', 'ml', 'kn', 'te'],
     load: 'languageOnly',
     detection: {
       order: ['localStorage', 'navigator'],

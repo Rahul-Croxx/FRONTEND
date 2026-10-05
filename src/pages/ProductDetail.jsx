@@ -12,6 +12,7 @@ const LANGUAGES = [
   { code: 'ta', native: 'தமிழ்', english: 'Tamil' },
   { code: 'ml', native: 'മലയാളം', english: 'Malayalam' },
   { code: 'kn', native: 'ಕನ್ನಡ', english: 'Kannada' },
+  { code: 'te', native: 'తెలుగు', english: 'Telugu' },
   { code: 'en', native: 'English', english: 'English' },
 ];
 
@@ -20,6 +21,7 @@ const SELECT_TITLES = [
   'மொழியைத் தேர்ந்தெடுக்கவும்',
   'ഭാഷ തിരഞ്ഞെടുക്കുക',
   'ಭಾಷೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ',
+  'భాషను ఎంచుకోండి',
   'Select your language',
 ];
 
@@ -132,7 +134,7 @@ function ProductDetail() {
   useEffect(() => {
     const onChange = (lng) => {
       const code = (lng || 'en').split('-')[0];
-      if (!['en', 'ta', 'ml', 'kn'].includes(code)) return;
+      if (!['en', 'ta', 'ml', 'kn', 'te'].includes(code)) return;
       writeSessionLang(code);
       setLang(code);
       setShowPicker(false);
