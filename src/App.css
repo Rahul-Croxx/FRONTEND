@@ -939,10 +939,12 @@ html:not([lang="en"]) .hb-top {
 /* Farmmetrix logo in the footer company column (footer is dark, so give it a light plate) */
 .footer-company-logo {
   display: block;
-  max-width: 170px;
+  width: 150px;
+  max-width: 100%;
   height: auto;
-  margin-bottom: 14px;
-  padding: 8px 12px;
+  margin-bottom: 16px;
+  padding: 10px 14px;
+  box-sizing: border-box;
   background: #fff;
   border-radius: 10px;
 }
