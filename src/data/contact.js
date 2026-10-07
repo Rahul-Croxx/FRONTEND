@@ -6,7 +6,7 @@
 
 export const COMPANY_INDIA = {
   brand: 'CroxX India',
-  legalName: 'Farmmetrix India Private Limited',
+  legalName: 'farm metrix India Private Limited',
   address: 'Sy.No: 60/3B1, 61/1A1A2 and 64/11B, KMR Avenue, Janapanchatram Koot Road, Alinjivakkam, Chennai, Tiruvallur, Tamil Nadu 600067',
   phone: '+91 93840 54859',
   email: '', // e.g. 'info@croxx.in' – shown in the footer and used by "Contact" buttons once filled in

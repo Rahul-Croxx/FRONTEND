@@ -798,41 +798,45 @@
   }
 }
 
-/* Germany → India badge in the middle of the header */
+/* Germany → India badge in the middle of the header:
+   two overlapping round flag "seals" + tagline with a German/Indian colour bar */
 .header-badge {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 26px;
+  gap: 20px;
   min-width: 0;
   padding: 0 24px;
 }
 
-.hb-flags {
+.hb-seal {
   display: flex;
   align-items: center;
-  gap: 12px;
+  flex: 0 0 auto;
+}
+
+.hb-disc {
+  position: relative;
+  display: block;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 6px 14px rgba(0, 0, 0, 0.14);
+  background: #fff;
+}
+
+.hb-disc-in {
+  margin-left: -18px;
+  z-index: 1;
 }
 
 .hb-flag {
-  height: 40px;
-  width: auto;
   display: block;
-  border-radius: 4px;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12), 0 3px 8px rgba(0, 0, 0, 0.1);
-}
-
-.hb-arrow {
-  width: 40px;
-  height: 16px;
-  color: #dd6f15;
-}
-
-.hb-divider {
-  width: 1px;
-  height: 62px;
-  background: #e2e2e2;
+  width: 100%;
+  height: 100%;
 }
 
 .hb-text {
@@ -842,16 +846,28 @@
 }
 
 .hb-top {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 2.6px;
   text-transform: uppercase;
   color: #6b6b6b;
 }
 
+/* thin bar: German colours flowing into Indian colours */
+.hb-rule {
+  display: block;
+  width: 100%;
+  max-width: 190px;
+  height: 3px;
+  margin: 7px 0 6px;
+  border-radius: 3px;
+  background: linear-gradient(90deg,
+    #000000 0 16.6%, #DD0000 16.6% 33.3%, #FFCE00 33.3% 50%,
+    #FF9933 50% 66.6%, #e6e6e6 66.6% 83.3%, #138808 83.3% 100%);
+}
+
 .hb-bottom {
-  margin-top: 6px;
-  font-size: 31px;
+  font-size: 30px;
   font-weight: 500;
   color: #1f1f1f;
   white-space: nowrap;
@@ -862,22 +878,21 @@
   font-weight: 700;
 }
 
-/* Tamil, Malayalam and Kannada letters join together, so no wide letter-spacing there */
+/* Indian-language letters join together, so no wide letter-spacing there */
 html:not([lang="en"]) .hb-top {
   letter-spacing: 0;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 500;
 }
 
 /* Medium screens: keep it compact so it never touches the logo or icons */
 @media (max-width: 1180px) {
-  .header-badge { gap: 16px; padding: 0 12px; }
-  .hb-flags { gap: 8px; }
-  .hb-flag { height: 30px; }
-  .hb-arrow { width: 30px; height: 12px; }
-  .hb-divider { height: 48px; }
+  .header-badge { gap: 14px; padding: 0 12px; }
+  .hb-disc { width: 44px; height: 44px; border-width: 2px; }
+  .hb-disc-in { margin-left: -14px; }
   .hb-top { font-size: 12px; letter-spacing: 2px; }
   html:not([lang="en"]) .hb-top { font-size: 14px; }
+  .hb-rule { margin: 5px 0 4px; max-width: 150px; }
   .hb-bottom { font-size: 23px; }
 }
 

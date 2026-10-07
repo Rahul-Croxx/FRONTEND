@@ -17,7 +17,8 @@
     "moreInfo": "మరింత సమాచారం",
     "privacy": "గోప్యతా విధానం",
     "legalNotice": "లీగల్ నోటీసు",
-    "germanyTitle": "CroxX జర్మనీ"
+    "germanyTitle": "CroxX జర్మనీ",
+    "germanyLink": "CroxX జర్మనీ"
   },
   "home": {
     "heroTitle": "సరైన మార్గంలో ఎరువుల దరఖాస్తు",
@@ -416,7 +417,8 @@
     "mapOn": "పంపిణీదారులు ఉన్న రాష్ట్రాలు",
     "mapOff": "ఇతర రాష్ట్రాలు",
     "contactVia": "ఈ రాష్ట్రంలో విచారణల కోసం సంప్రదించండి:",
-    "gstin": "GSTIN"
+    "gstin": "GSTIN",
+    "viewMap": "Google Maps‌లో చూడండి"
   },
   "notFound": {
     "title": "పేజీ కనుగొనబడలేదు",
@@ -425,6 +427,8 @@
   "header": {
     "taglineTop": "జర్మన్ నైపుణ్యం",
     "taglineIn": "ఇప్పుడు",
-    "taglineIndia": "భారతదేశంలో"
+    "taglineIndia": "భారతదేశంలో",
+    "searchPlaceholder": "ఉత్పత్తులను వెతకండి",
+    "searchNoResults": "ఉత్పత్తులు ఏవీ కనుగొనబడలేదు"
   }
 }

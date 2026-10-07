@@ -6,7 +6,6 @@ import { MapPin, Globe, Award, Lightbulb, Leaf } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { PRODUCTS } from '../data/products';
-import { CONTACT_PHOTO, contactHref } from '../data/contact';
 import imgStim from '../assets/croxx_stim_1790246769837.jpg';
 import imgFoliar from '../assets/croxx_foliar_1790246785336.jpg';
 import imgMicro from '../assets/croxx_micro_1790246799190.jpg';
@@ -226,22 +225,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="contact-section">
-        <div className="contact-container">
-          <p className="contact-subtitle">{t("home.contactSub")}</p>
-          <h2 className="contact-title" dangerouslySetInnerHTML={{__html: t("home.contactTitle")}}></h2>
-          
-          <div className="contact-card">
-            <div className="contact-card-inner">
-              <div className="contact-bg" style={{ backgroundImage: `url('${CONTACT_PHOTO}')` }}></div>
-              <div className="contact-btn-wrap">
-                <a href={contactHref()} className="btn-contact">{t("home.contactBtn")}</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 }

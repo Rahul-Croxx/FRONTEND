@@ -17,7 +17,8 @@
     "moreInfo": "കൂടുതൽ വിവരങ്ങൾ",
     "privacy": "സ്വകാര്യതാ നയം",
     "legalNotice": "നിയമപരമായ അറിയിപ്പ്",
-    "germanyTitle": "CroxX ജർമ്മനി"
+    "germanyTitle": "CroxX ജർമ്മനി",
+    "germanyLink": "CroxX ജർമ്മനി"
   },
   "home": {
     "heroTitle": "ശരിയായ പാതയിൽ വളപ്രയോഗം",
@@ -416,7 +417,8 @@
     "mapOn": "വിതരണക്കാർ ഉള്ള സംസ്ഥാനങ്ങൾ",
     "mapOff": "മറ്റ് സംസ്ഥാനങ്ങൾ",
     "contactVia": "ഈ സംസ്ഥാനത്തെ അന്വേഷണങ്ങൾക്ക് ബന്ധപ്പെടുക:",
-    "gstin": "GSTIN"
+    "gstin": "GSTIN",
+    "viewMap": "Google Maps-ൽ കാണുക"
   },
   "notFound": {
     "title": "പേജ് കണ്ടെത്തിയില്ല",
@@ -425,6 +427,8 @@
   "header": {
     "taglineTop": "ജർമ്മൻ വൈദഗ്ധ്യം",
     "taglineIn": "ഇപ്പോൾ",
-    "taglineIndia": "ഇന്ത്യയിൽ"
+    "taglineIndia": "ഇന്ത്യയിൽ",
+    "searchPlaceholder": "ഉൽപ്പന്നങ്ങൾ തിരയുക",
+    "searchNoResults": "ഉൽപ്പന്നങ്ങളൊന്നും കണ്ടെത്തിയില്ല"
   }
 }

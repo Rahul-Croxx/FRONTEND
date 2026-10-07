@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Hostinger upload package (build output)
+croxx-website-hostinger.zip

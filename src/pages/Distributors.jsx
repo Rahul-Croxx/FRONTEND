@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { MapPin, Phone, Mail, Building2, ChevronUp } from 'lucide-react';
+import { MapPin, Phone, Mail, Building2, ChevronUp, Navigation } from 'lucide-react';
 import { DISTRIBUTOR_STATES } from '../data/distributors';
-import { CONTACT_PHOTO } from '../data/contact';
+import { CONTACT_PHOTO, contactHref } from '../data/contact';
 import IndiaMap from '../components/IndiaMap';
 import './Inhibitors.css'; // shared page layout (hero, cards, contact section)
 import './Distributors.css';
@@ -21,6 +20,11 @@ function LocationBlock({ loc, t }) {
         <p className="dist-location-line"><Mail size={16} aria-hidden="true" /> <a href={`mailto:${loc.email}`}>{loc.email}</a></p>
       )}
       {loc.gstin && <p className="dist-location-gst">{t('distributors.gstin')}: {loc.gstin}</p>}
+      {loc.map && (
+        <a className="dist-map-link" href={loc.map} target="_blank" rel="noopener noreferrer">
+          <Navigation size={15} aria-hidden="true" /> {t('distributors.viewMap')}
+        </a>
+      )}
     </div>
   );
 }
@@ -72,7 +76,7 @@ function Distributors() {
       </div>
 
       {/* One card per state */}
-      <section className="ih-products-section">
+      <section className="ih-products-section" id="offices">
         <div className="ih-products-container">
           {DISTRIBUTOR_STATES.map((state) => {
             const locations = state.locations || [];
@@ -109,7 +113,7 @@ function Distributors() {
           <div className="ih-contact-left">
             <h2 dangerouslySetInnerHTML={{ __html: t('inhibitors.needMore') }}></h2>
             <p dangerouslySetInnerHTML={{ __html: t('inhibitors.contactDesc') }}></p>
-            <Link to="/#contact" className="btn-outline-contact">{t('inhibitors.contactBtn')}</Link>
+            <a href={contactHref()} className="btn-outline-contact">{t('inhibitors.contactBtn')}</a>
           </div>
           <div className="ih-contact-right animate-on-scroll">
             <img src={CONTACT_PHOTO} alt={t('inhibitors.contactBtn')} className="ih-contact-img" />

@@ -6,10 +6,11 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import LegacyQrRedirect from './components/LegacyQrRedirect';
 import ScrollToHash from './components/ScrollToHash';
+import ProductSearch from './components/ProductSearch';
 import { FaLinkedinIn, FaFacebookF, FaInstagram } from 'react-icons/fa';
 import { FaXTwitter, FaYoutube } from 'react-icons/fa6';
-import { Phone, Mail, MapPin } from 'lucide-react';
-import { COMPANY_INDIA, SOCIAL_LINKS } from './data/contact';
+import { ExternalLink } from 'lucide-react';
+import { COMPANY_INDIA, COMPANY_GERMANY, SOCIAL_LINKS } from './data/contact';
 
 import Home from './pages/Home';
 import Inhibitors from './pages/Inhibitors';
@@ -33,7 +34,7 @@ import './mobile.css'; // phone & tablet layout (loaded last so it can adjust ev
 // Header badge: Germany → India (flags drawn to official proportions)
 function FlagGermany() {
   return (
-    <svg viewBox="0 0 50 30" className="hb-flag" aria-hidden="true">
+    <svg viewBox="0 0 50 30" className="hb-flag" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
       <rect width="50" height="10" fill="#000000" />
       <rect y="10" width="50" height="10" fill="#DD0000" />
       <rect y="20" width="50" height="10" fill="#FFCE00" />
@@ -43,7 +44,7 @@ function FlagGermany() {
 
 function FlagIndia() {
   return (
-    <svg viewBox="0 0 45 30" className="hb-flag" aria-hidden="true">
+    <svg viewBox="0 0 45 30" className="hb-flag" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
       <rect width="45" height="10" fill="#FF9933" />
       <rect y="10" width="45" height="10" fill="#FFFFFF" />
       <rect y="20" width="45" height="10" fill="#138808" />
@@ -59,16 +60,13 @@ function FlagIndia() {
 function HeaderBadge({ t }) {
   return (
     <div className="header-badge" aria-label={`${t("header.taglineTop")} – ${t("header.taglineIn")} ${t("header.taglineIndia")}`}>
-      <div className="hb-flags" aria-hidden="true">
-        <FlagGermany />
-        <svg className="hb-arrow" viewBox="0 0 30 12" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M1 6h26M22 1.5 27 6l-5 4.5" />
-        </svg>
-        <FlagIndia />
+      <div className="hb-seal" aria-hidden="true">
+        <span className="hb-disc hb-disc-de"><FlagGermany /></span>
+        <span className="hb-disc hb-disc-in"><FlagIndia /></span>
       </div>
-      <span className="hb-divider" aria-hidden="true"></span>
       <div className="hb-text" aria-hidden="true">
         <span className="hb-top">{t("header.taglineTop")}</span>
+        <span className="hb-rule"></span>
         <span className="hb-bottom">{t("header.taglineIn")} <b>{t("header.taglineIndia")}</b></span>
       </div>
     </div>
@@ -223,7 +221,8 @@ function App() {
                 <Link to="/downloads#specialty_fertilizers" className="dropdown-item">{t("nav.specialty")}</Link>
               </div>
             </div>
-            <Link to="/#contact" className="nav-link">{t("nav.contact")}</Link>
+            <Link to="/distributors#offices" className="nav-link">{t("nav.contact")}</Link>
+            <ProductSearch onNavigate={() => setMenuOpen(false)} />
             <div className="nav-social-mobile">
               <SocialIcons />
             </div>
@@ -268,15 +267,13 @@ function App() {
                   onError={(e) => { e.currentTarget.style.display = 'none'; }}
                 />
                 <p><strong>{COMPANY_INDIA.legalName}</strong></p>
-                {COMPANY_INDIA.address && (
-                  <p className="footer-contact-line"><MapPin size={16} aria-hidden="true" /> <span>{COMPANY_INDIA.address}</span></p>
-                )}
-                {COMPANY_INDIA.phone && (
-                  <p className="footer-contact-line"><Phone size={16} aria-hidden="true" /> <a href={`tel:${COMPANY_INDIA.phone.replace(/\s+/g, '')}`}>{COMPANY_INDIA.phone}</a></p>
-                )}
-                {COMPANY_INDIA.email && (
-                  <p className="footer-contact-line"><Mail size={16} aria-hidden="true" /> <a href={`mailto:${COMPANY_INDIA.email}`}>{COMPANY_INDIA.email}</a></p>
-                )}
+                <p className="footer-contact-line">
+                  <ExternalLink size={16} aria-hidden="true" />
+                  <span>
+                    {t("footer.germanyLink")}:{' '}
+                    <a href={COMPANY_GERMANY.website} target="_blank" rel="noopener noreferrer">{COMPANY_GERMANY.websiteLabel}</a>
+                  </span>
+                </p>
               </div>
             </div>
 

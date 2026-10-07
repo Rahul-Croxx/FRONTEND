@@ -232,3 +232,31 @@
   }
   .dist-location-line svg { margin-top: 0; }
 }
+
+/* "View on Google Maps" link under each address */
+.dist-map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 7px 14px;
+  border: 1px solid #dd6f15;
+  border-radius: 999px;
+  color: #dd6f15 !important;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: background 0.2s, color 0.2s;
+}
+
+.dist-map-link:hover {
+  background: #dd6f15;
+  color: #fff !important;
+}
+
+/* nav "Contact" link lands here, below the sticky menu */
+#offices { scroll-margin-top: 110px; }
+
+@media (max-width: 768px) {
+  .dist-location .dist-map-link { min-height: 44px; padding: 0 16px; }
+}

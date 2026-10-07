@@ -17,7 +17,8 @@
     "moreInfo": "ಹೆಚ್ಚಿನ ಮಾಹಿತಿ",
     "privacy": "ಗೌಪ್ಯತೆ ನೀತಿ",
     "legalNotice": "ಕಾನೂನು ಸೂಚನೆ",
-    "germanyTitle": "CroxX ಜರ್ಮನಿ"
+    "germanyTitle": "CroxX ಜರ್ಮನಿ",
+    "germanyLink": "CroxX ಜರ್ಮನಿ"
   },
   "home": {
     "heroTitle": "ಸರಿಯಾದ ಹಾದಿಯಲ್ಲಿ ರಸಗೊಬ್ಬರ ಅಪ್ಲಿಕೇಶನ್",
@@ -416,7 +417,8 @@
     "mapOn": "ವಿತರಕರು ಇರುವ ರಾಜ್ಯಗಳು",
     "mapOff": "ಇತರ ರಾಜ್ಯಗಳು",
     "contactVia": "ಈ ರಾಜ್ಯದ ವಿಚಾರಣೆಗಳಿಗಾಗಿ ಸಂಪರ್ಕಿಸಿ:",
-    "gstin": "GSTIN"
+    "gstin": "GSTIN",
+    "viewMap": "Google Maps ನಲ್ಲಿ ನೋಡಿ"
   },
   "notFound": {
     "title": "ಪುಟ ಕಂಡುಬಂದಿಲ್ಲ",
@@ -425,6 +427,8 @@
   "header": {
     "taglineTop": "ಜರ್ಮನ್ ಪರಿಣತಿ",
     "taglineIn": "ಈಗ",
-    "taglineIndia": "ಭಾರತದಲ್ಲಿ"
+    "taglineIndia": "ಭಾರತದಲ್ಲಿ",
+    "searchPlaceholder": "ಉತ್ಪನ್ನಗಳನ್ನು ಹುಡುಕಿ",
+    "searchNoResults": "ಯಾವುದೇ ಉತ್ಪನ್ನಗಳು ಕಂಡುಬಂದಿಲ್ಲ"
   }
 }

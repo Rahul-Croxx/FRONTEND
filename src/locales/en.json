@@ -17,7 +17,8 @@
     "moreInfo": "More information",
     "privacy": "Privacy Policy",
     "legalNotice": "Legal Notice",
-    "germanyTitle": "CroxX Germany"
+    "germanyTitle": "CroxX Germany",
+    "germanyLink": "CroxX Germany"
   },
   "home": {
     "heroTitle": "Fertilization on the right track",
@@ -414,7 +415,8 @@
     "mapOn": "Distributor presence",
     "mapOff": "Other states",
     "contactVia": "For enquiries in this state, please contact:",
-    "gstin": "GSTIN"
+    "gstin": "GSTIN",
+    "viewMap": "View on Google Maps"
   },
   "notFound": {
     "title": "Page not found",
@@ -423,6 +425,8 @@
   "header": {
     "taglineTop": "German expertise",
     "taglineIn": "Now in",
-    "taglineIndia": "India"
+    "taglineIndia": "India",
+    "searchPlaceholder": "Search products",
+    "searchNoResults": "No products found"
   }
 }

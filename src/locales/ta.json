@@ -17,7 +17,8 @@
     "moreInfo": "மேலும் தகவல்",
     "privacy": "தனியுரிமைக் கொள்கை",
     "legalNotice": "சட்ட அறிவிப்பு",
-    "germanyTitle": "CroxX ஜெர்மனி"
+    "germanyTitle": "CroxX ஜெர்மனி",
+    "germanyLink": "CroxX ஜெர்மனி"
   },
   "home": {
     "heroTitle": "சரியான பாதையில் உரமிடுதல்",
@@ -416,7 +417,8 @@
     "mapOn": "விநியோகஸ்தர்கள் உள்ள மாநிலங்கள்",
     "mapOff": "பிற மாநிலங்கள்",
     "contactVia": "இந்த மாநிலத்தில் விசாரணைகளுக்கு, தொடர்பு கொள்ளவும்:",
-    "gstin": "GSTIN"
+    "gstin": "GSTIN",
+    "viewMap": "Google Maps-இல் பார்க்க"
   },
   "notFound": {
     "title": "பக்கம் கிடைக்கவில்லை",
@@ -425,6 +427,8 @@
   "header": {
     "taglineTop": "ஜெர்மன் நிபுணத்துவம்",
     "taglineIn": "இப்போது",
-    "taglineIndia": "இந்தியாவில்"
+    "taglineIndia": "இந்தியாவில்",
+    "searchPlaceholder": "தயாரிப்புகளைத் தேடுங்கள்",
+    "searchNoResults": "தயாரிப்புகள் எதுவும் கிடைக்கவில்லை"
   }
 }
