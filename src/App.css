@@ -799,38 +799,37 @@
 }
 
 /* Germany → India badge in the middle of the header:
-   two overlapping round flag "seals" + tagline with a German/Indian colour bar */
+   a small "route" – German flag, dotted flight path with a plane, Indian flag – and a caption */
 .header-badge {
   flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
   min-width: 0;
   padding: 0 24px;
 }
 
-.hb-seal {
+.hb-route {
   display: flex;
   align-items: center;
-  flex: 0 0 auto;
+  gap: 14px;
 }
 
-.hb-disc {
-  position: relative;
+.hb-place {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hb-flagbox {
   display: block;
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
+  width: 42px;
+  height: 28px;
+  border-radius: 5px;
   overflow: hidden;
-  border: 3px solid #fff;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 6px 14px rgba(0, 0, 0, 0.14);
-  background: #fff;
-}
-
-.hb-disc-in {
-  margin-left: -18px;
-  z-index: 1;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12), 0 3px 8px rgba(0, 0, 0, 0.12);
 }
 
 .hb-flag {
@@ -839,61 +838,61 @@
   height: 100%;
 }
 
-.hb-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.15;
-}
-
-.hb-top {
-  font-size: 14px;
+.hb-place-name {
+  font-size: 24px;
   font-weight: 700;
-  letter-spacing: 2.6px;
-  text-transform: uppercase;
-  color: #6b6b6b;
-}
-
-/* thin bar: German colours flowing into Indian colours */
-.hb-rule {
-  display: block;
-  width: 100%;
-  max-width: 190px;
-  height: 3px;
-  margin: 7px 0 6px;
-  border-radius: 3px;
-  background: linear-gradient(90deg,
-    #000000 0 16.6%, #DD0000 16.6% 33.3%, #FFCE00 33.3% 50%,
-    #FF9933 50% 66.6%, #e6e6e6 66.6% 83.3%, #138808 83.3% 100%);
-}
-
-.hb-bottom {
-  font-size: 30px;
-  font-weight: 500;
   color: #1f1f1f;
   white-space: nowrap;
 }
 
-.hb-bottom b {
+.hb-place-in { color: #dd6f15; }
+
+.hb-path {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   color: #dd6f15;
-  font-weight: 700;
 }
 
+.hb-dots {
+  display: block;
+  width: 34px;
+  height: 0;
+  border-top: 2px dotted #c9c9c9;
+}
+
+.hb-plane {
+  transform: rotate(45deg); /* point the plane to the right, towards India */
+}
+
+.hb-caption {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  color: #6b6b6b;
+  white-space: nowrap;
+}
+
+.hb-sep { color: #dd6f15; margin: 0 2px; }
+
 /* Indian-language letters join together, so no wide letter-spacing there */
-html:not([lang="en"]) .hb-top {
+html:not([lang="en"]) .hb-caption {
   letter-spacing: 0;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
 }
 
 /* Medium screens: keep it compact so it never touches the logo or icons */
 @media (max-width: 1180px) {
-  .header-badge { gap: 14px; padding: 0 12px; }
-  .hb-disc { width: 44px; height: 44px; border-width: 2px; }
-  .hb-disc-in { margin-left: -14px; }
-  .hb-top { font-size: 12px; letter-spacing: 2px; }
-  html:not([lang="en"]) .hb-top { font-size: 14px; }
-  .hb-rule { margin: 5px 0 4px; max-width: 150px; }
-  .hb-bottom { font-size: 23px; }
+  .header-badge { gap: 6px; padding: 0 12px; }
+  .hb-route { gap: 10px; }
+  .hb-flagbox { width: 32px; height: 21px; }
+  .hb-place { gap: 7px; }
+  .hb-place-name { font-size: 18px; }
+  .hb-dots { width: 18px; }
+  .hb-caption { font-size: 11px; letter-spacing: 1.6px; }
+  html:not([lang="en"]) .hb-caption { font-size: 12px; }
 }
 
 /* Footer company column (CroxX India + CroxX Germany) */

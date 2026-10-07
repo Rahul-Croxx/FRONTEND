@@ -427,6 +427,8 @@
     "taglineIn": "Now in",
     "taglineIndia": "India",
     "searchPlaceholder": "Search products",
-    "searchNoResults": "No products found"
+    "searchNoResults": "No products found",
+    "germany": "Germany",
+    "india": "India"
   }
 }

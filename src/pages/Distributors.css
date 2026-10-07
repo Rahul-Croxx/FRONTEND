@@ -255,7 +255,8 @@
 }
 
 /* nav "Contact" link lands here, below the sticky menu */
-#offices { scroll-margin-top: 110px; }
+#offices,
+.distributors-page #contact { scroll-margin-top: 110px; }
 
 @media (max-width: 768px) {
   .dist-location .dist-map-link { min-height: 44px; padding: 0 16px; }

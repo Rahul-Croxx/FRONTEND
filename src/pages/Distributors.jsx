@@ -108,7 +108,7 @@ function Distributors() {
       </section>
 
       {/* Contact Section (same as the product pages) */}
-      <section className="ih-contact-section">
+      <section className="ih-contact-section" id="contact">
         <div className="ih-contact-container">
           <div className="ih-contact-left">
             <h2 dangerouslySetInnerHTML={{ __html: t('inhibitors.needMore') }}></h2>

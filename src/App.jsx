@@ -9,7 +9,7 @@ import ScrollToHash from './components/ScrollToHash';
 import ProductSearch from './components/ProductSearch';
 import { FaLinkedinIn, FaFacebookF, FaInstagram } from 'react-icons/fa';
 import { FaXTwitter, FaYoutube } from 'react-icons/fa6';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Plane } from 'lucide-react';
 import { COMPANY_INDIA, COMPANY_GERMANY, SOCIAL_LINKS } from './data/contact';
 
 import Home from './pages/Home';
@@ -34,7 +34,7 @@ import './mobile.css'; // phone & tablet layout (loaded last so it can adjust ev
 // Header badge: Germany → India (flags drawn to official proportions)
 function FlagGermany() {
   return (
-    <svg viewBox="0 0 50 30" className="hb-flag" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <svg viewBox="0 0 50 30" className="hb-flag" aria-hidden="true">
       <rect width="50" height="10" fill="#000000" />
       <rect y="10" width="50" height="10" fill="#DD0000" />
       <rect y="20" width="50" height="10" fill="#FFCE00" />
@@ -44,7 +44,7 @@ function FlagGermany() {
 
 function FlagIndia() {
   return (
-    <svg viewBox="0 0 45 30" className="hb-flag" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <svg viewBox="0 0 45 30" className="hb-flag" aria-hidden="true">
       <rect width="45" height="10" fill="#FF9933" />
       <rect y="10" width="45" height="10" fill="#FFFFFF" />
       <rect y="20" width="45" height="10" fill="#138808" />
@@ -57,17 +57,27 @@ function FlagIndia() {
   );
 }
 
+// Germany → India "route": flag, dotted flight path with a plane, flag; caption below.
 function HeaderBadge({ t }) {
   return (
     <div className="header-badge" aria-label={`${t("header.taglineTop")} – ${t("header.taglineIn")} ${t("header.taglineIndia")}`}>
-      <div className="hb-seal" aria-hidden="true">
-        <span className="hb-disc hb-disc-de"><FlagGermany /></span>
-        <span className="hb-disc hb-disc-in"><FlagIndia /></span>
+      <div className="hb-route" aria-hidden="true">
+        <span className="hb-place">
+          <span className="hb-flagbox"><FlagGermany /></span>
+          <span className="hb-place-name">{t("header.germany")}</span>
+        </span>
+        <span className="hb-path">
+          <span className="hb-dots"></span>
+          <Plane className="hb-plane" size={20} strokeWidth={2} />
+          <span className="hb-dots"></span>
+        </span>
+        <span className="hb-place">
+          <span className="hb-place-name hb-place-in">{t("header.india")}</span>
+          <span className="hb-flagbox"><FlagIndia /></span>
+        </span>
       </div>
-      <div className="hb-text" aria-hidden="true">
-        <span className="hb-top">{t("header.taglineTop")}</span>
-        <span className="hb-rule"></span>
-        <span className="hb-bottom">{t("header.taglineIn")} <b>{t("header.taglineIndia")}</b></span>
+      <div className="hb-caption" aria-hidden="true">
+        {t("header.taglineTop")} <span className="hb-sep">·</span> {t("header.taglineIn")} {t("header.taglineIndia")}
       </div>
     </div>
   );
@@ -221,7 +231,7 @@ function App() {
                 <Link to="/downloads#specialty_fertilizers" className="dropdown-item">{t("nav.specialty")}</Link>
               </div>
             </div>
-            <Link to="/distributors#offices" className="nav-link">{t("nav.contact")}</Link>
+            <Link to="/distributors#contact" className="nav-link">{t("nav.contact")}</Link>
             <ProductSearch onNavigate={() => setMenuOpen(false)} />
             <div className="nav-social-mobile">
               <SocialIcons />
