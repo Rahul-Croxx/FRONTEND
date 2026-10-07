@@ -28,10 +28,8 @@ export const SOCIAL_LINKS = {
   youtube: '#',
 };
 
-// Photo used behind the "Contact" sections (rice fields with palm trees, Hampi, Karnataka –
-// photo by Alexey Turenkov, free Pexels licence).
-export const CONTACT_PHOTO =
-  'https://images.pexels.com/photos/14721502/pexels-photo-14721502.jpeg?auto=compress&cs=tinysrgb&w=1000&h=680&fit=crop';
+// Photo used in the "Contact" sections: green crop field (web-sized copy of public/bg.png).
+export const CONTACT_PHOTO = '/images/contact-field.jpg';
 
 // Link for "Contact" buttons: e-mail when available, otherwise a phone call, otherwise the distributors page.
 export const contactHref = () => {

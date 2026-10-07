@@ -119,10 +119,6 @@ function Home() {
               </div>
             )}
 
-            <div className="about-block">
-              <h3 className="about-subtitle">{t("home.germanyTitle")}</h3>
-              <p className="about-text">{t("home.germanySummary")}</p>
-            </div>
             <Link to="/company" className="btn-outline">{t("home.readMore")}</Link>
           </div>
 

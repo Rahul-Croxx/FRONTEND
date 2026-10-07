@@ -262,8 +262,8 @@ function App() {
               <h4 className="footer-title">{t("footer.company")}</h4>
               <div className="footer-text">
                 <img
-                  src="/images/farmmetrix-logo.png"
-                  alt={COMPANY_INDIA.legalName}
+                  src="/images/croxx_logo.svg"
+                  alt="CroxX"
                   className="footer-company-logo"
                   onError={(e) => { e.currentTarget.style.display = 'none'; }}
                 />
