@@ -153,7 +153,7 @@ function App() {
           <div className="logo-area">
             <Link to="/" className="logo-link">
               <img 
-                src="https://croxx-fertilizer.de/images/CroxX_Logo_4c_61m_100y_.svg" 
+                src="/images/croxx_logo.svg" 
                 alt="Crox Logo" 
                 style={{ width: '100%', height: 'auto', display: 'block' }} 
               />
@@ -262,7 +262,7 @@ function App() {
               <h4 className="footer-title">{t("footer.company")}</h4>
               <div className="footer-text">
                 <img
-                  src="/images/farmmetrix-logo.svg"
+                  src="/images/farmmetrix-logo.png"
                   alt={COMPANY_INDIA.legalName}
                   className="footer-company-logo"
                   onError={(e) => { e.currentTarget.style.display = 'none'; }}

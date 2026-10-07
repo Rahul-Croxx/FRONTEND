@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { MapPin, Phone, Mail, Building2, ChevronUp } from 'lucide-react';
 import { DISTRIBUTOR_STATES } from '../data/distributors';
-import { COMPANY_INDIA, CONTACT_PHOTO } from '../data/contact';
+import { CONTACT_PHOTO } from '../data/contact';
 import IndiaMap from '../components/IndiaMap';
 import './Inhibitors.css'; // shared page layout (hero, cards, contact section)
 import './Distributors.css';
@@ -90,14 +90,9 @@ function Distributors() {
                   <div className="ih-product-text dist-text">
                     <p className="ih-product-cat">{t('distributors.cat')}</p>
                     <h2 className="ih-product-name">{t(state.nameKey)}</h2>
-                    {locations.length > 0 ? (
+                    {locations.length > 0 && (
                       <div className="dist-locations">
                         {locations.map((loc) => <LocationBlock key={loc.name} loc={loc} t={t} />)}
-                      </div>
-                    ) : (
-                      <div className="dist-locations">
-                        <p className="dist-contact-via">{t('distributors.contactVia')}</p>
-                        <LocationBlock loc={{ name: COMPANY_INDIA.legalName, address: COMPANY_INDIA.address, phone: COMPANY_INDIA.phone, email: COMPANY_INDIA.email }} t={t} />
                       </div>
                     )}
                   </div>

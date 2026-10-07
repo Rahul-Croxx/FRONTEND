@@ -55,7 +55,7 @@ function Company() {
 
         <div className="company-right">
 
-          <img src="https://croxx-fertilizer.de/images/CroxX_Logo_4c_61m_100y_.svg" alt="CroxX Logo" className="croxx-logo-large" />
+          <img src="/images/croxx_logo.svg" alt="CroxX Logo" className="croxx-logo-large" />
         </div>
       </div>
 
