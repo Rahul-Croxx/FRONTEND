@@ -57,7 +57,8 @@ function FlagIndia() {
   );
 }
 
-// Germany → India "route": flag, dotted flight path with a plane, flag; caption below.
+// Germany → India "route": glossy flags, a curved flight path with a plane flying
+// from Germany to India, and a caption with fine rules on both sides.
 function HeaderBadge({ t }) {
   return (
     <div className="header-badge" aria-label={`${t("header.taglineTop")} – ${t("header.taglineIn")} ${t("header.taglineIndia")}`}>
@@ -66,18 +67,35 @@ function HeaderBadge({ t }) {
           <span className="hb-flagbox"><FlagGermany /></span>
           <span className="hb-place-name">{t("header.germany")}</span>
         </span>
-        <span className="hb-path">
-          <span className="hb-dots"></span>
-          <Plane className="hb-plane" size={20} strokeWidth={2} />
-          <span className="hb-dots"></span>
+
+        <span className="hb-flight">
+          <svg className="hb-arc" viewBox="0 0 140 44" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="hbArcGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stopColor="#DD0000" />
+                <stop offset="30%" stopColor="#FFCE00" />
+                <stop offset="70%" stopColor="#FF9933" />
+                <stop offset="100%" stopColor="#138808" />
+              </linearGradient>
+            </defs>
+            <path d="M6 38 Q70 -6 134 38" fill="none" stroke="url(#hbArcGrad)" strokeWidth="2" strokeLinecap="round" strokeDasharray="1 6" />
+            <circle cx="6" cy="38" r="3.2" fill="#DD0000" />
+            <circle cx="134" cy="38" r="3.2" fill="#138808" />
+          </svg>
+          <span className="hb-plane-move">
+            <Plane className="hb-plane" size={18} strokeWidth={2.2} />
+          </span>
         </span>
+
         <span className="hb-place">
           <span className="hb-place-name hb-place-in">{t("header.india")}</span>
           <span className="hb-flagbox"><FlagIndia /></span>
         </span>
       </div>
       <div className="hb-caption" aria-hidden="true">
-        {t("header.taglineTop")} <span className="hb-sep">·</span> {t("header.taglineIn")} {t("header.taglineIndia")}
+        <span className="hb-caption-text">
+          {t("header.taglineTop")} <span className="hb-sep"></span> {t("header.taglineIn")} {t("header.taglineIndia")}
+        </span>
       </div>
     </div>
   );

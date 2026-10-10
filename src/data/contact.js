@@ -21,11 +21,11 @@ export const COMPANY_GERMANY = {
 
 // Social media pages – replace '#' with the real page links.
 export const SOCIAL_LINKS = {
-  linkedin: '#',
+  linkedin: 'https://www.linkedin.com/in/croxx-india-239748375/',
   facebook: '#',
   instagram: '#',
   twitter: '#',
-  youtube: '#',
+  youtube: 'https://www.youtube.com/@CroxXIndia',
 };
 
 // Photo used in the "Contact" sections: green crop field (web-sized copy of public/bg.png).
