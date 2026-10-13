@@ -76,13 +76,14 @@ function Downloads() {
         { name: "CroxX stim Antisal eco", file: "CroxX_stim_Antisal_eco.pdf" },
         { name: "CroxX stim AquaBoost", file: "CroxX_stim_AquaBoost.pdf" },
         { name: "CroxX stim Activator 17", file: "CroxX_stim_Activator_17.pdf" },
-        { name: "CroxX stim Activator", file: "CroxX_stim_Activator.pdf" }
+        { name: "CroxX stim Activator Granulars", file: "CroxX_stim_Activator_Granulars.pdf" }
       ]
     },
     {
       title: "CroxX foliar",
       pdfs: [
         { name: "CroxX foliar CalciPlus", file: "CroxX_foliar_CalciPlus.pdf" },
+        { name: "CroxX foliar CabMag Plus", file: "CroxX_foliar_CaBMg.pdf" },
         { name: "CroxX foliar Si15", file: "CroxX_foliar_Si15.pdf" },
         { name: "CroxX foliar 5-5-5", file: "CroxX_foliar_5_5_5.pdf" },
         { name: "CroxX foliar 10-4-7", file: "CroxX_foliar_10_4_7.pdf" },
@@ -95,7 +96,7 @@ function Downloads() {
     {
       title: "CroxX micro",
       pdfs: [
-        { name: "CroxX micro 6FE EDDHA", file: "CroxX_micro_6FE_EDDHA.pdf" },
+        { name: "CroxX micro 6% Fe-EDDHA", file: "CroxX_micro_6FE_EDDHA.pdf" },
         { name: "CroxX micro Multitop 1", file: "CroxX_micro_Multitop_1.pdf" },
         { name: "CroxX micro Boron", file: "CroxX_micro_Boron.pdf" },
         { name: "CroxX micro Zinc 15 EDTA", file: "CroxX_micro_Zinc_15_EDTA.pdf" },
@@ -106,7 +107,11 @@ function Downloads() {
     {
       title: "CroxX solub",
       pdfs: [
-        { name: "CroxX solub NPK", file: "CroxX_solub_NPK.pdf" },
+        { name: "CroxX solub 13-40-13", file: "CroxX_solub_13_40_13.pdf" },
+        { name: "CroxX solub 19-19-19", file: "CroxX_solub_19_19_19.pdf" },
+        { name: "CroxX solub 0-9-47", file: "CroxX_solub_0_9_47.pdf" },
+        { name: "CroxX solub 0-39-37", file: "CroxX_solub_0_39_37.pdf" },
+        { name: "CroxX solub 16-8-24 + 2MgO", file: "CroxX_solub_16_8_24_2MgO.pdf" },
         { name: "CroxX solub Calcipower", file: "CroxX_solub_Calcipower.pdf" },
         { name: "CroxX solub CalMagpower", file: "CroxX_solub_CalMagpower.pdf" }
       ]
@@ -115,14 +120,14 @@ function Downloads() {
       title: "CroxX stabil",
       pdfs: [
         { name: "CroxX stabil 26", file: "https://croxx-fertilizer.de/files/CroxX_stabil_26.pdf" },
-        { name: "CroxX stabil 12-12-17 2MgO TE", file: "CroxX_stabil_12_12_17_2MgO_TE.pdf" },
+        { name: "CroxX stabil 12-60-00", file: "CroxX_stabil_12_60_00.pdf" },
         { name: "CroxX stabil 21", file: "CroxX_stabil_21.pdf" }
       ]
     },
     {
       title: "CroxX gran",
       pdfs: [
-        { name: "CroxX gran 12-12-17 SOP", file: "CroxX_gran_12_12_17_SOP.pdf" }
+        { name: "CroxX gran 12-11-18+2MgO+TE", file: "CroxX_gran_12_11_18_2MgO_TE.pdf" }
       ]
     },
     {
@@ -134,7 +139,7 @@ function Downloads() {
     {
       title: "CroxX cote",
       pdfs: [
-        { name: "CroxX cote", file: "CroxX_cote.pdf" }
+        { name: "CroxX cote 15-19-15 + TE 6M", file: "CroxX_cote_15_19_15_TE_6M.pdf" }
       ]
     }
   ];

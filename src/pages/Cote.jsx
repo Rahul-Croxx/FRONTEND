@@ -32,7 +32,7 @@ function Cote() {
     {
       name: t("cote.prodName0"), anchor: tEn("cote.prodName0"), subtitle: t("cote.prodSub0"),
       slug: "cote",
-      pdf: "/files/CroxX_cote.pdf",
+      pdf: "/files/CroxX_cote_15_19_15_TE_6M.pdf",
       comboLogo: "",
       img: "https://croxx-fertilizer.de/images/croxx_cote_A2.jpg"
     }
@@ -69,6 +69,9 @@ function Cote() {
                   <p className="ih-product-cat" dangerouslySetInnerHTML={{ __html: t("cote.prodCat") }}></p>
                   <h2 className="ih-product-name" style={{ color: '#a64a85' }}>{prod.name}</h2>
                   <p className="ih-product-desc">{prod.subtitle}</p>
+                  {findProduct("cote", prod.slug)?.packs && (
+                    <p className="ih-product-packs"><strong>{t("common.packSizes")}:</strong> {findProduct("cote", prod.slug).packs}</p>
+                  )}
                   <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
                     <a href={prod.pdf} target="_blank" rel="noopener noreferrer" className="ih-btn-red">{t("inhibitors.details")}</a>
                     <ProductQR product={findProduct("cote", prod.slug)} label={t("common.scanMobile")} />

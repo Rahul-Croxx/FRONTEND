@@ -194,7 +194,7 @@
     "heroSubtitle": "Polymer coated Controlled Release Fertilizer",
     "heroDesc": "Fully polymer coated fertilizer for a controlled nutrient release from three to twelve months. For fertilization in Fruit Tree Plantations, Forestry, and substrate mixes in ornamental crops.",
     "prodCat": "CroxX <strong>cote</strong>",
-    "prodName0": "Controlled Release Fertilizer",
+    "prodName0": "15-19-15 + TE 6M",
     "prodSub0": "Compound NPK Fertilizer or physical blends with a controlled nutrient release from 3, 6, 9 or 12 months in various NPK ratios"
   },
   "foliar": {
@@ -215,17 +215,17 @@
     "prodSub5": "Liquid mineral NK Fertilizer 3-0-30 enriched with EDTA",
     "prodName6": "Calci plus",
     "prodSub6": "Liquid calcium corrector with Magnesium and Trace Elements",
-    "prodName7": "CaBMg Plus",
+    "prodName7": "CabMag Plus",
     "prodSub7": "High Calcium and Magnesium liquid fertilizer with added Boron",
     "prodName8": "Si15",
     "prodSub8": "High Silicon formula with Potassium and Algae Extract (Ascophyllum nodosum)"
   },
   "gran": {
     "heroSubtitle": "Balanced Granulars",
-    "heroDesc": "Special mineral compound Fertilizer as the classical and allrounder 12-12-17 formula. All declared nutrients in each homogeneously sized granule ensuring better distribution of nutrients and spreading conditions on the field.",
+    "heroDesc": "Special mineral compound Fertilizer as the classical and allrounder 12-11-18 formula. All declared nutrients in each homogeneously sized granule ensuring better distribution of nutrients and spreading conditions on the field.",
     "prodCat": "CroxX <strong>gran</strong>",
-    "prodName0": "12-12-17+2 MgO+TE",
-    "prodSub0": "Special mineral compound Fertilizer in the classical & allrounder 12-12-17 formula"
+    "prodName0": "12-11-18+2MgO+TE",
+    "prodSub0": "Special mineral compound Fertilizer in the classical & allrounder 12-11-18 formula"
   },
   "micro": {
     "heroSubtitle": "Micronutrient Fertilizer",
@@ -266,7 +266,12 @@
     "prodName1": "CalMagpower",
     "prodSub1": "Compound solid inorganic Ca + Mg Fertilizer with TE. Enriched with organic complex",
     "prodName2": "Water Soluble Fertilizer",
-    "prodSub2": "High quality soluble Fertilizers for Fertigation and Foliar Application"
+    "prodSub2": "High quality soluble Fertilizers for Fertigation and Foliar Application",
+    "prodName3": "13-40-13",
+    "prodName4": "19-19-19",
+    "prodName5": "0-9-47",
+    "prodName6": "0-39-37",
+    "prodName7": "16-8-24 + 2MgO"
   },
   "stabil": {
     "heroSubtitle": "N-Stabilized Formulas for Ground Application and Fertigation with 3.4 DMPP",
@@ -274,7 +279,7 @@
     "prodCat": "CroxX <strong>stabil</strong>",
     "prodName0": "stabil 21",
     "prodSub0": "Stabilzed soluble N-Fertilizer for Nitrogen nutrition in Fertigation systems with 3,4 DMPP",
-    "prodName1": "12-12-17+2MgO+TE",
+    "prodName1": "12-60-00",
     "prodSub1": "Classical balanced SOP-based Fertilizer enriched with MgO, TE and stabilized with 3,4 DMPP"
   },
   "stim": {
@@ -307,12 +312,13 @@
     "prodSub11": "Biodegradable wetting agent against dry spots in turf",
     "prodName12": "Activator 17",
     "prodSub12": "High purity liquid Humic & Fulvic Acids",
-    "prodName13": "Activator",
+    "prodName13": "Activator Granulars",
     "prodSub13": "Solid premium K-Humate, fully water soluble dry powder"
   },
   "common": {
     "leaflet": "Leaflet",
-    "scanMobile": "Scan to view on Mobile"
+    "scanMobile": "Scan to view on Mobile",
+    "packSizes": "Available pack sizes"
   },
   "privacy": {
     "title": "Privacy Policy",

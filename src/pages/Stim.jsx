@@ -123,7 +123,7 @@ function Stim() {
     {
       name: t("stim.prodName13"), anchor: tEn("stim.prodName13"), subtitle: t("stim.prodSub13"),
       slug: "activator",
-      pdf: "/files/CroxX_stim_Activator.pdf",
+      pdf: "/files/CroxX_stim_Activator_Granulars.pdf",
       comboLogo: null,
       img: "https://croxx-fertilizer.de/images/croxx_stim_activator.jpg"
     }
@@ -160,6 +160,9 @@ function Stim() {
                   <p className="ih-product-cat" dangerouslySetInnerHTML={{ __html: t("stim.prodCat") }}></p>
                   <h2 className="ih-product-name" style={{ color: '#c1272d' }}>{prod.name}</h2>
                   <p className="ih-product-desc">{prod.subtitle}</p>
+                  {findProduct("stim", prod.slug)?.packs && (
+                    <p className="ih-product-packs"><strong>{t("common.packSizes")}:</strong> {findProduct("stim", prod.slug).packs}</p>
+                  )}
                   <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
                     <a href={prod.pdf} target="_blank" rel="noopener noreferrer" className="ih-btn-red">{t("inhibitors.details")}</a>
                     <ProductQR product={findProduct("stim", prod.slug)} label={t("common.scanMobile")} />

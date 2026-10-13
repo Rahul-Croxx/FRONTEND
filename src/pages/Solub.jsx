@@ -44,9 +44,37 @@ function Solub() {
       img: "https://croxx-fertilizer.de/images/croxx_solub_calmagpower_A2.jpg"
     },
     {
-      name: t("solub.prodName2"), anchor: tEn("solub.prodName2"), subtitle: t("solub.prodSub2"),
-      slug: "npk",
-      pdf: "/files/CroxX_solub_NPK.pdf",
+      name: t("solub.prodName3"), anchor: tEn("solub.prodName3"), subtitle: t("solub.prodSub2"),
+      slug: "13-40-13",
+      pdf: "/files/CroxX_solub_13_40_13.pdf",
+      comboLogo: "https://croxx-fertilizer.de/images/_ce.jpg",
+      img: "https://croxx-fertilizer.de/images/croxx_solub.jpg"
+    },
+    {
+      name: t("solub.prodName4"), anchor: tEn("solub.prodName4"), subtitle: t("solub.prodSub2"),
+      slug: "19-19-19",
+      pdf: "/files/CroxX_solub_19_19_19.pdf",
+      comboLogo: "https://croxx-fertilizer.de/images/_ce.jpg",
+      img: "https://croxx-fertilizer.de/images/croxx_solub.jpg"
+    },
+    {
+      name: t("solub.prodName5"), anchor: tEn("solub.prodName5"), subtitle: t("solub.prodSub2"),
+      slug: "0-9-47",
+      pdf: "/files/CroxX_solub_0_9_47.pdf",
+      comboLogo: "https://croxx-fertilizer.de/images/_ce.jpg",
+      img: "https://croxx-fertilizer.de/images/croxx_solub.jpg"
+    },
+    {
+      name: t("solub.prodName6"), anchor: tEn("solub.prodName6"), subtitle: t("solub.prodSub2"),
+      slug: "0-39-37",
+      pdf: "/files/CroxX_solub_0_39_37.pdf",
+      comboLogo: "https://croxx-fertilizer.de/images/_ce.jpg",
+      img: "https://croxx-fertilizer.de/images/croxx_solub.jpg"
+    },
+    {
+      name: t("solub.prodName7"), anchor: tEn("solub.prodName7"), subtitle: t("solub.prodSub2"),
+      slug: "16-8-24-2mgo",
+      pdf: "/files/CroxX_solub_16_8_24_2MgO.pdf",
       comboLogo: "https://croxx-fertilizer.de/images/_ce.jpg",
       img: "https://croxx-fertilizer.de/images/croxx_solub.jpg"
     }
@@ -83,6 +111,9 @@ function Solub() {
                   <p className="ih-product-cat" dangerouslySetInnerHTML={{ __html: t("solub.prodCat") }}></p>
                   <h2 className="ih-product-name" style={{ color: '#2b5387' }}>{prod.name}</h2>
                   <p className="ih-product-desc">{prod.subtitle}</p>
+                  {findProduct("solub", prod.slug)?.packs && (
+                    <p className="ih-product-packs"><strong>{t("common.packSizes")}:</strong> {findProduct("solub", prod.slug).packs}</p>
+                  )}
                   <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
                     <a href={prod.pdf} target="_blank" rel="noopener noreferrer" className="ih-btn-red">{t("inhibitors.details")}</a>
                     <ProductQR product={findProduct("solub", prod.slug)} label={t("common.scanMobile")} />

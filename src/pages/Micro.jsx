@@ -125,6 +125,9 @@ function Micro() {
                   <p className="ih-product-cat" dangerouslySetInnerHTML={{ __html: t("micro.prodCat") }}></p>
                   <h2 className="ih-product-name" style={{ color: '#e85c33' }}>{prod.name}</h2>
                   <p className="ih-product-desc">{prod.subtitle}</p>
+                  {findProduct("micro", prod.slug)?.packs && (
+                    <p className="ih-product-packs"><strong>{t("common.packSizes")}:</strong> {findProduct("micro", prod.slug).packs}</p>
+                  )}
                   <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
                     <a href={prod.pdf} target="_blank" rel="noopener noreferrer" className="ih-btn-red">{t("inhibitors.details")}</a>
                     <ProductQR product={findProduct("micro", prod.slug)} label={t("common.scanMobile")} />

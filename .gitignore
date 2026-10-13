@@ -25,3 +25,6 @@ dist-ssr
 
 # Hostinger upload package (build output)
 croxx-website-hostinger.zip
+
+# temporary sync archive
+.sync-src.tgz

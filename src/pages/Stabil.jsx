@@ -39,7 +39,7 @@ function Stabil() {
     {
       name: t("stabil.prodName1"), anchor: tEn("stabil.prodName1"), subtitle: t("stabil.prodSub1"),
       slug: "12-12-17-2mgo-te",
-      pdf: "/files/CroxX_stabil_12_12_17_2MgO_TE.pdf",
+      pdf: "/files/CroxX_stabil_12_60_00.pdf",
       comboLogo: "https://croxx-fertilizer.de/images/_ce.jpg",
       img: "https://croxx-fertilizer.de/images/croxx_stabil_12_12_17.jpg"
     }
@@ -76,6 +76,9 @@ function Stabil() {
                   <p className="ih-product-cat" dangerouslySetInnerHTML={{ __html: t("stabil.prodCat") }}></p>
                   <h2 className="ih-product-name" style={{ color: '#278644' }}>{prod.name}</h2>
                   <p className="ih-product-desc">{prod.subtitle}</p>
+                  {findProduct("stabil", prod.slug)?.packs && (
+                    <p className="ih-product-packs"><strong>{t("common.packSizes")}:</strong> {findProduct("stabil", prod.slug).packs}</p>
+                  )}
                   <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
                     <a href={prod.pdf} target="_blank" rel="noopener noreferrer" className="ih-btn-red">{t("inhibitors.details")}</a>
                     <ProductQR product={findProduct("stabil", prod.slug)} label={t("common.scanMobile")} />

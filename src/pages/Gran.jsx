@@ -32,7 +32,7 @@ function Gran() {
     {
       name: t("gran.prodName0"), anchor: tEn("gran.prodName0"), subtitle: t("gran.prodSub0"),
       slug: "12-12-17-sop",
-      pdf: "/files/CroxX_gran_12_12_17_SOP.pdf",
+      pdf: "/files/CroxX_gran_12_11_18_2MgO_TE.pdf",
       comboLogo: "https://croxx-fertilizer.de/images/_ce.jpg",
       img: "https://croxx-fertilizer.de/images/croxx_gran_12-12-172MgOTE.jpg"
     }
@@ -69,6 +69,9 @@ function Gran() {
                   <p className="ih-product-cat" dangerouslySetInnerHTML={{ __html: t("gran.prodCat") }}></p>
                   <h2 className="ih-product-name" style={{ color: '#3b6ba5' }}>{prod.name}</h2>
                   <p className="ih-product-desc">{prod.subtitle}</p>
+                  {findProduct("gran", prod.slug)?.packs && (
+                    <p className="ih-product-packs"><strong>{t("common.packSizes")}:</strong> {findProduct("gran", prod.slug).packs}</p>
+                  )}
                   <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
                     <a href={prod.pdf} target="_blank" rel="noopener noreferrer" className="ih-btn-red">{t("inhibitors.details")}</a>
                     <ProductQR product={findProduct("gran", prod.slug)} label={t("common.scanMobile")} />

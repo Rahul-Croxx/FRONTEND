@@ -125,6 +125,9 @@ function Foliar() {
                   <p className="ih-product-cat" dangerouslySetInnerHTML={{ __html: t("foliar.prodCat") }}></p>
                   <h2 className="ih-product-name" style={{ color: '#aa4f26' }}>{prod.name}</h2>
                   <p className="ih-product-desc">{prod.subtitle}</p>
+                  {findProduct("foliar", prod.slug)?.packs && (
+                    <p className="ih-product-packs"><strong>{t("common.packSizes")}:</strong> {findProduct("foliar", prod.slug).packs}</p>
+                  )}
                   <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
                     <a href={prod.pdf} target="_blank" rel="noopener noreferrer" className="ih-btn-red">{t("inhibitors.details")}</a>
                     <ProductQR product={findProduct("foliar", prod.slug)} label={t("common.scanMobile")} />

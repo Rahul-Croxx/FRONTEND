@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Search, X } from 'lucide-react';
-import { PRODUCTS, CATEGORIES, productPath } from '../data/products';
+import { VISIBLE_PRODUCTS as PRODUCTS, CATEGORIES, productPath } from '../data/products';
 import './ProductSearch.css';
 
 // Remove HTML tags (category names contain <strong>) and accents, lower-case.
