@@ -215,7 +215,7 @@
     "prodSub5": "Liquid mineral NK Fertilizer 3-0-30 enriched with EDTA",
     "prodName6": "Calci plus",
     "prodSub6": "Liquid calcium corrector with Magnesium and Trace Elements",
-    "prodName7": "CabMag Plus",
+    "prodName7": "CaBMg Plus",
     "prodSub7": "High Calcium and Magnesium liquid fertilizer with added Boron",
     "prodName8": "Si15",
     "prodSub8": "High Silicon formula with Potassium and Algae Extract (Ascophyllum nodosum)"
@@ -245,7 +245,7 @@
     "prodSub5": "Solid microgranular mix of trace elements, partially chelated with EDTA",
     "prodName6": "Boron",
     "prodSub6": "Liquid Boron Fertilizer for Foliar Application and Fertigation",
-    "prodName7": "bormo",
+    "prodName7": "Bormo",
     "prodSub7": "Balanced liquid Boron and Molybdenum Fertilizer",
     "prodName8": "BZn",
     "prodSub8": "Boron-Zinc combi-fertilizer with improved solubility"
@@ -268,10 +268,10 @@
     "prodName2": "Water Soluble Fertilizer",
     "prodSub2": "High quality soluble Fertilizers for Fertigation and Foliar Application",
     "prodName3": "13-40-13",
-    "prodName4": "19-19-19",
+    "prodName4": "19-19-19 + TE",
     "prodName5": "0-9-47",
     "prodName6": "0-39-37",
-    "prodName7": "16-8-24 + 2MgO"
+    "prodName7": "16-8-24 + 2MgO + TE"
   },
   "stabil": {
     "heroSubtitle": "N-Stabilized Formulas for Ground Application and Fertigation with 3.4 DMPP",
@@ -312,7 +312,7 @@
     "prodSub11": "Biodegradable wetting agent against dry spots in turf",
     "prodName12": "Activator 17",
     "prodSub12": "High purity liquid Humic & Fulvic Acids",
-    "prodName13": "Activator Granulars",
+    "prodName13": "Activator",
     "prodSub13": "Solid premium K-Humate, fully water soluble dry powder"
   },
   "common": {
