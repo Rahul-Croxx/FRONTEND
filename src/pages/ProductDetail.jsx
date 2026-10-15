@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ChevronUp, Globe, Check } from 'lucide-react';
 import { findProduct, CATEGORIES } from '../data/products';
+import QrInfo, { hasQrInfo } from '../components/QrInfo';
 import ProductQR from '../components/ProductQR';
 import './Inhibitors.css'; // existing product card styles
 import './ProductDetail.css';
@@ -204,6 +205,10 @@ function ProductDetail() {
                 )}
               </div>
             </div>
+
+            {hasQrInfo(product) && (
+              <QrInfo product={product} pageLang={lang} details={info} accent={category.accent} />
+            )}
 
             {!text ? (
               <p className="pd-loading">…</p>
