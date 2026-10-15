@@ -318,7 +318,8 @@
   "common": {
     "leaflet": "Leaflet",
     "scanMobile": "Scan to view on Mobile",
-    "packSizes": "Available pack sizes"
+    "packSizes": "Available pack sizes",
+    "viewProduct": "View product"
   },
   "privacy": {
     "title": "Privacy Policy",

@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { CONTACT_PHOTO, contactHref } from '../data/contact';
 import ProductQR from '../components/ProductQR';
+import ProductLink from '../components/ProductLink';
 import { findProduct } from '../data/products';
 import React, { useEffect } from 'react';
 import heroImg from '../assets/croxx_solub_1790246815367.jpg';
@@ -104,18 +105,19 @@ function Solub() {
           {products.map((prod, idx) => (
             <div className="ih-product-card" key={idx} id={prod.anchor ? prod.anchor.replace(/\s+/g, "_") : ""}>
               <div className="ih-product-img-wrapper">
-                <img src={prod.img} alt={prod.name} className="ih-product-img" />
+                <ProductLink category="solub" slug={prod.slug} className="ih-product-link" aria-label={prod.name}><img src={prod.img} alt={prod.name} className="ih-product-img" /></ProductLink>
               </div>
               <div className="ih-product-info">
                 <div className="ih-product-text">
                   <p className="ih-product-cat" dangerouslySetInnerHTML={{ __html: t("solub.prodCat") }}></p>
-                  <h2 className="ih-product-name" style={{ color: '#2b5387' }}>{prod.name}</h2>
+                  <h2 className="ih-product-name" style={{ color: '#2b5387' }}><ProductLink category="solub" slug={prod.slug} className="ih-product-name-link">{prod.name}</ProductLink></h2>
                   <p className="ih-product-desc">{prod.subtitle}</p>
                   {findProduct("solub", prod.slug)?.packs && (
                     <p className="ih-product-packs"><strong>{t("common.packSizes")}:</strong> {findProduct("solub", prod.slug).packs}</p>
                   )}
                   <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
                     <a href={prod.pdf} target="_blank" rel="noopener noreferrer" className="ih-btn-red">{t("inhibitors.details")}</a>
+                    <ProductLink category="solub" slug={prod.slug} className="ih-btn-view">{t("common.viewProduct")}</ProductLink>
                     <ProductQR product={findProduct("solub", prod.slug)} label={t("common.scanMobile")} />
                   </div>
                 </div>
