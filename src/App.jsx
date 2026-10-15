@@ -10,7 +10,7 @@ import ProductSearch from './components/ProductSearch';
 import { FaLinkedinIn, FaFacebookF, FaInstagram } from 'react-icons/fa';
 import { FaXTwitter, FaYoutube } from 'react-icons/fa6';
 import { ExternalLink, Plane } from 'lucide-react';
-import { COMPANY_INDIA, COMPANY_GERMANY, SOCIAL_LINKS } from './data/contact';
+import { COMPANY_GERMANY, SOCIAL_LINKS } from './data/contact';
 
 import Home from './pages/Home';
 import Inhibitors from './pages/Inhibitors';
@@ -294,7 +294,6 @@ function App() {
                   className="footer-company-logo"
                   onError={(e) => { e.currentTarget.style.display = 'none'; }}
                 />
-                <p><strong>{COMPANY_INDIA.legalName}</strong></p>
                 <p className="footer-contact-line">
                   <ExternalLink size={16} aria-hidden="true" />
                   <span>
