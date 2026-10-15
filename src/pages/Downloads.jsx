@@ -49,20 +49,48 @@ function Downloads() {
     }
   }, [location]);
 
-  // Only the products CroxX India sells (client product list)
+  const inhibitorsData = [
+    { name: "CroxX Uplus+", file: "CroxX_Uplus.pdf" },
+    { name: "CroxX Nplus+", file: "CroxX_Nplus.pdf" },
+    { name: "CroxX N2 stabil", file: "CroxX_N2_stabil.pdf" },
+    { name: "CroxX P-Booster", file: "CroxX_P_Booster.pdf" },
+    { name: "CroxX Phos-N protect", file: "CroxX_Phos-N_protect.pdf" },
+    { name: "CroxX protectioN", file: "CroxX_ProtectioN.pdf" },
+    { name: "CroxX Double ProtectioN", file: "CroxX_Double_ProtectioN.pdf" },
+  ];
+
   const specialtyCategories = [
     {
       title: "CroxX stim",
       pdfs: [
+        { name: "CroxX stim Aminopower", file: "CroxX_stim_Aminopower.pdf" },
+        { name: "CroxX stim Rootpower", file: "CroxX_stim_Rootpower.pdf" },
+        { name: "CroxX stim Kelp", file: "CroxX_stim_Kelp.pdf" },
+        { name: "CroxX stim Kelp Maxima", file: "CroxX_stim_Kelp_Maxima.pdf" },
         { name: "CroxX stim Algae", file: "CroxX_stim_Algae.pdf" },
+        { name: "CroxX stim Blossom", file: "CroxX_stim_Blossom.pdf" },
+        { name: "CroxX stim Vital", file: "CroxX_stim_Vital.pdf" },
+        { name: "CroxX stim Super SL", file: "CroxX_stim_Super_SL.pdf" },
+        { name: "CroxX stim Pentaphos", file: "CroxX_stim_Pentaphos.pdf" },
+        { name: "CroxX stim Antisal", file: "CroxX_stim_Antisal.pdf" },
+        { name: "CroxX stim Antisal eco", file: "CroxX_stim_Antisal_eco.pdf" },
+        { name: "CroxX stim AquaBoost", file: "CroxX_stim_AquaBoost.pdf" },
         { name: "CroxX stim Activator 17", file: "CroxX_stim_Activator_17.pdf" },
-        { name: "CroxX stim Activator", file: "CroxX_stim_Activator.pdf" }
+        { name: "CroxX stim Activator Granulars", file: "CroxX_stim_Activator_Granulars.pdf" }
       ]
     },
     {
       title: "CroxX foliar",
       pdfs: [
-        { name: "CroxX foliar CaBMg Plus", file: "CroxX_foliar_CaBMg.pdf" }
+        { name: "CroxX foliar CalciPlus", file: "CroxX_foliar_CalciPlus.pdf" },
+        { name: "CroxX foliar CabMag Plus", file: "CroxX_foliar_CaBMg.pdf" },
+        { name: "CroxX foliar Si15", file: "CroxX_foliar_Si15.pdf" },
+        { name: "CroxX foliar 5-5-5", file: "CroxX_foliar_5_5_5.pdf" },
+        { name: "CroxX foliar 10-4-7", file: "CroxX_foliar_10_4_7.pdf" },
+        { name: "CroxX foliar N37", file: "CroxX_foliar_N37.pdf" },
+        { name: "CroxX foliar K46", file: "CroxX_foliar_K46.pdf" },
+        { name: "CroxX foliar N18/4", file: "CroxX_foliar_N18_4.pdf" },
+        { name: "CroxX foliar 0-30-20", file: "CroxX_foliar_0_30_20.pdf" }
       ]
     },
     {
@@ -70,23 +98,29 @@ function Downloads() {
       pdfs: [
         { name: "CroxX micro 6% Fe-EDDHA", file: "CroxX_micro_6FE_EDDHA.pdf" },
         { name: "CroxX micro Multitop 1", file: "CroxX_micro_Multitop_1.pdf" },
-        { name: "CroxX micro Bormo", file: "CroxX_micro_BorMo.pdf" }
+        { name: "CroxX micro Boron", file: "CroxX_micro_Boron.pdf" },
+        { name: "CroxX micro Zinc 15 EDTA", file: "CroxX_micro_Zinc_15_EDTA.pdf" },
+        { name: "CroxX micro Iron 13 Fe EDTA", file: "CroxX_micro_Iron_13_Fe_EDTA.pdf" },
+        { name: "CroxX micro BorMo", file: "CroxX_micro_BorMo.pdf" }
       ]
     },
     {
       title: "CroxX solub",
       pdfs: [
-        { name: "CroxX solub Calcipower", file: "CroxX_solub_Calcipower.pdf" },
         { name: "CroxX solub 13-40-13", file: "CroxX_solub_13_40_13.pdf" },
-        { name: "CroxX solub 19-19-19 + TE", file: "CroxX_solub_19_19_19.pdf" },
+        { name: "CroxX solub 19-19-19", file: "CroxX_solub_19_19_19.pdf" },
         { name: "CroxX solub 0-9-47", file: "CroxX_solub_0_9_47.pdf" },
         { name: "CroxX solub 0-39-37", file: "CroxX_solub_0_39_37.pdf" },
-        { name: "CroxX solub 16-8-24 + 2MgO + TE", file: "CroxX_solub_16_8_24_2MgO.pdf" }
+        { name: "CroxX solub 16-8-24 + 2MgO", file: "CroxX_solub_16_8_24_2MgO.pdf" },
+        { name: "CroxX solub Calcipower", file: "CroxX_solub_Calcipower.pdf" },
+        { name: "CroxX solub CalMagpower", file: "CroxX_solub_CalMagpower.pdf" }
       ]
     },
     {
       title: "CroxX stabil",
       pdfs: [
+        { name: "CroxX stabil 26", file: "https://croxx-fertilizer.de/files/CroxX_stabil_26.pdf" },
+        { name: "CroxX stabil 12-60-00", file: "CroxX_stabil_12_60_00.pdf" },
         { name: "CroxX stabil 21", file: "CroxX_stabil_21.pdf" }
       ]
     },
@@ -97,11 +131,17 @@ function Downloads() {
       ]
     },
     {
+      title: "CroxX microgran",
+      pdfs: [
+        { name: "CroxX microgran Kickstart 10-45", file: "CroxX_microgran_Kickstart_10_45.pdf" }
+      ]
+    },
+    {
       title: "CroxX cote",
       pdfs: [
         { name: "CroxX cote 15-19-15 + TE 6M", file: "CroxX_cote_15_19_15_TE_6M.pdf" }
       ]
-    },
+    }
   ];
 
   return (
@@ -116,6 +156,23 @@ function Downloads() {
       </div>
 
       <div className="downloads-container">
+        {/* Section 1: Inhibitors */}
+        <section id="inhibitors_enhancers" className="dl-section">
+          <div className="dl-header">
+            <FileText size={24} className="dl-header-icon" />
+            <h2>{t("downloads.inhibitors")}</h2>
+          </div>
+          <div className="dl-accordion-wrapper">
+            <AccordionItem title={t("downloads.products")} pdfs={inhibitorsData} />
+            <AccordionItem title={t("downloads.leafletsInh")} pdfs={[
+              { name: `${t("common.leaflet")} – ${t("nav.inhibitors")}`, file: "https://croxx-fertilizer.de/files/Leaflet_CroxX_Inhibitors_Enhancers.pdf" },
+              { name: `${t("common.leaflet")} CroxX protectioN`, file: "https://croxx-fertilizer.de/files/Leaflet_CroxX_protectioN.pdf" },
+              { name: `${t("common.leaflet")} CroxX P-Booster`, file: "https://croxx-fertilizer.de/files/Leaflet_CroxX_P-Booster.pdf" },
+              { name: `${t("common.leaflet")} CroxX N2stabil`, file: "https://croxx-fertilizer.de/files/Leaflet_CroxX_N2stabil.pdf" }
+            ]} />
+          </div>
+        </section>
+
         {/* Section 2: Specialty Fertilizers */}
         <section id="specialty_fertilizers" className="dl-section">
           <div className="dl-header">
@@ -126,6 +183,12 @@ function Downloads() {
             {specialtyCategories.map((cat, idx) => (
               <AccordionItem key={idx} title={cat.title} pdfs={cat.pdfs} />
             ))}
+            <AccordionItem title={t("downloads.leafletsSpec")} pdfs={[
+              { name: `${t("common.leaflet")} CroxX stim`, file: "Leaflet_CroxX_Stim.pdf" },
+              { name: `${t("common.leaflet")} CroxX foliar`, file: "Leaflet_CroxX_Foliar-Fertilizers.pdf" },
+              { name: `${t("common.leaflet")} CroxX micro`, file: "Leaflet_CroxX_MicroFertilizer.pdf" },
+              { name: `${t("common.leaflet")} CroxX solub`, file: "Leaflet_CroxX_Solub.pdf" }
+            ]} />
           </div>
         </section>
       </div>

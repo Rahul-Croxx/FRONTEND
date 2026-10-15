@@ -12,6 +12,7 @@ import imgMicro from '../assets/croxx_micro_1790246799190.jpg';
 import imgSolub from '../assets/croxx_solub_1790246815367.jpg';
 import imgStabil from '../assets/croxx_stabil_1790246829202.jpg';
 import imgGran from '../assets/croxx_gran_1790246847787.jpg';
+import imgMicrogran from '../assets/croxx_microgran_1790246860403.jpg';
 import imgCote from '../assets/croxx_cote_1790246872862.jpg';
 
 // Specialty-fertilizer card: on hover the background cycles through that range's products
@@ -182,6 +183,18 @@ function Home() {
       {/* Inhibitors Section */}
       <section className="inhibitors-section">
         <div className="inhibitors-container">
+          <h2 className="inhibitors-title">{t("nav.inhibitors")}</h2>
+          
+          <div className="inhibitors-banner-wrapper animate-on-scroll" id="inhibitors">
+            <div className="inhibitors-banner">
+              <div className="inhibitors-bg"></div>
+              <div className="inhibitors-banner-content">
+                <h3 dangerouslySetInnerHTML={{__html: t("home.inhibitorsTitle")}}></h3>
+                <p>{t("home.inhibitorsSub")}</p>
+              </div>
+            </div>
+          </div>
+
           <h2 className="inhibitors-title bottom-title animate-on-scroll" id="specialty-fertilizers">{t("nav.specialty")}</h2>
 
           <div className="sf-grid animate-on-scroll">
@@ -202,6 +215,9 @@ function Home() {
 
             <CategoryCard category="gran" image={imgGran} onOpen={() => navigate('/gran')}
               title={t("home.granTitle")} subtitle={t("home.granSub")} />
+
+            <CategoryCard category="microgran" image={imgMicrogran} onOpen={() => navigate('/microgran')}
+              title={t("home.microgranTitle")} subtitle={t("home.microgranSub")} />
 
             <CategoryCard category="cote" image={imgCote} onOpen={() => navigate('/cote')}
               title={t("home.coteTitle")} subtitle={t("home.coteSub")} />

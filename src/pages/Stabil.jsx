@@ -66,7 +66,7 @@ function Stabil() {
       {/* Products List */}
       <section className="ih-products-section">
         <div className="ih-products-container">
-          {products.filter((prod) => findProduct("stabil", prod.slug)).map((prod, idx) => (
+          {products.map((prod, idx) => (
             <div className="ih-product-card" key={idx} id={prod.anchor ? prod.anchor.replace(/\s+/g, "_") : ""}>
               <div className="ih-product-img-wrapper">
                 <img src={prod.img} alt={prod.name} className="ih-product-img" />
@@ -98,12 +98,14 @@ function Stabil() {
       {/* Categories Grid */}
       <section className="ih-categories-section">
         <div className="ih-categories-grid">
+          <Link to="/inhibitors" className="ih-cat-pill">{t("nav.inhibitors")}</Link>
           <Link to="/stim" className="ih-cat-pill">CroxX <strong>stim</strong></Link>
           <Link to="/foliar" className="ih-cat-pill">CroxX <strong>foliar</strong></Link>
           <Link to="/micro" className="ih-cat-pill">CroxX <strong>micro</strong></Link>
           <Link to="/solub" className="ih-cat-pill">CroxX <strong>solub</strong></Link>
           <Link to="/stabil" className="ih-cat-pill">CroxX <strong>stabil</strong></Link>
           <Link to="/gran" className="ih-cat-pill">CroxX <strong>gran</strong></Link>
+          <Link to="/microgran" className="ih-cat-pill">CroxX <strong>microgran</strong></Link>
           <Link to="/cote" className="ih-cat-pill">CroxX <strong>cote</strong></Link>
         </div>
       </section>

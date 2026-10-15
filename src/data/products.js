@@ -14,8 +14,7 @@ export const CATEGORIES = {
   cote: { nameColor: '#a64a85', accent: '#a64a85', btnClass: 'ih-btn-cote', route: '/cote', catKey: 'cote.prodCat' },
 };
 
-// Every product CroxX has ever shown on this site (kept for reference).
-const ALL_PRODUCTS = [
+export const PRODUCTS = [
   { category: 'stim', slug: 'aminopower', nameKey: 'stim.prodName0', subKey: 'stim.prodSub0', pdf: '/files/CroxX_stim_Aminopower.pdf', img: 'https://croxx-fertilizer.de/images/croxx_stim_aminopower_5l.jpg', logo: "https://croxx-fertilizer.de/images/Aminopower_Benefit.jpg" },
   { category: 'stim', slug: 'rootpower', nameKey: 'stim.prodName1', subKey: 'stim.prodSub1', pdf: '/files/CroxX_stim_Rootpower.pdf', img: 'https://croxx-fertilizer.de/images/croxx_stim_rootpower_5l.jpg', logo: "https://croxx-fertilizer.de/images/Rootpower_Benefit.jpg" },
   { category: 'stim', slug: 'kelp', nameKey: 'stim.prodName2', subKey: 'stim.prodSub2', pdf: '/files/CroxX_stim_Kelp.pdf', img: 'https://croxx-fertilizer.de/images/croxx_stim_blossom_kelp_5l.jpg', logo: "https://croxx-fertilizer.de/images/Kelp_Benefit.jpg" },
@@ -29,7 +28,7 @@ const ALL_PRODUCTS = [
   { category: 'stim', slug: 'antisal-eco', nameKey: 'stim.prodName10', subKey: 'stim.prodSub10', pdf: '/files/CroxX_stim_Antisal_eco.pdf', img: 'https://croxx-fertilizer.de/images/croxx_stim_antisal_eco_5l.jpg', logo: "https://croxx-fertilizer.de/images/Antisal_Benefit.jpg" },
   { category: 'stim', slug: 'aquaboost', nameKey: 'stim.prodName11', subKey: 'stim.prodSub11', pdf: '/files/CroxX_stim_AquaBoost.pdf', img: 'https://croxx-fertilizer.de/images/croxx_stim_aquaboost_5l.jpg', logo: "https://croxx-fertilizer.de/images/Aquaboost_Benefit.jpg" },
   { category: 'stim', slug: 'activator-17', nameKey: 'stim.prodName12', subKey: 'stim.prodSub12', pdf: '/files/CroxX_stim_Activator_17.pdf', img: 'https://croxx-fertilizer.de/images/croxx_stim_activator_17_5l.jpg', logo: "https://croxx-fertilizer.de/images/Activator17_Benefit.jpg", packs: '500ml / 1l / 5l' },
-  { category: 'stim', slug: 'activator', nameKey: 'stim.prodName13', subKey: 'stim.prodSub13', pdf: '/files/CroxX_stim_Activator.pdf', img: 'https://croxx-fertilizer.de/images/croxx_stim_activator.jpg', logo: null, packs: '200g / 400g' },
+  { category: 'stim', slug: 'activator', nameKey: 'stim.prodName13', subKey: 'stim.prodSub13', pdf: '/files/CroxX_stim_Activator_Granulars.pdf', img: 'https://croxx-fertilizer.de/images/croxx_stim_activator.jpg', logo: null, packs: '200g / 400g' },
   { category: 'foliar', slug: '10-4-7', nameKey: 'foliar.prodName0', subKey: 'foliar.prodSub0', pdf: '/files/CroxX_foliar_10_4_7.pdf', img: 'https://croxx-fertilizer.de/images/croxx_foliar_10_4_7_5l.jpg', logo: "https://croxx-fertilizer.de/images/10-4-7_Benefit.jpg" },
   { category: 'foliar', slug: '5-5-5', nameKey: 'foliar.prodName1', subKey: 'foliar.prodSub1', pdf: '/files/CroxX_foliar_5_5_5.pdf', img: 'https://croxx-fertilizer.de/images/croxx_foliar_5-5-5_5l.jpg', logo: "https://croxx-fertilizer.de/images/5-5-5_Benefit1.jpg" },
   { category: 'foliar', slug: 'n37', nameKey: 'foliar.prodName2', subKey: 'foliar.prodSub2', pdf: '/files/CroxX_foliar_N37.pdf', img: 'https://croxx-fertilizer.de/images/croxx_foliar_n37_5l.jpg', logo: "https://croxx-fertilizer.de/images/n37_Benefit.jpg" },
@@ -37,9 +36,9 @@ const ALL_PRODUCTS = [
   { category: 'foliar', slug: '0-30-20', nameKey: 'foliar.prodName4', subKey: 'foliar.prodSub4', pdf: '/files/CroxX_foliar_0_30_20.pdf', img: 'https://croxx-fertilizer.de/images/croxx_foliar_0-30-20_5l.jpg', logo: "https://croxx-fertilizer.de/images/0-30-20_Benefit.jpg" },
   { category: 'foliar', slug: 'k46', nameKey: 'foliar.prodName5', subKey: 'foliar.prodSub5', pdf: '/files/CroxX_foliar_K46.pdf', img: 'https://croxx-fertilizer.de/images/croxx_foliar_k46_5l.jpg', logo: "https://croxx-fertilizer.de/images/K46_Benefit.jpg" },
   { category: 'foliar', slug: 'calciplus', nameKey: 'foliar.prodName6', subKey: 'foliar.prodSub6', pdf: '/files/CroxX_foliar_CalciPlus.pdf', img: 'https://croxx-fertilizer.de/images/croxx_foliar_calciplus_5l.jpg', logo: "https://croxx-fertilizer.de/images/calci_plus_Benefit.jpg" },
-  { category: 'foliar', slug: 'cabmg', nameKey: 'foliar.prodName7', subKey: 'foliar.prodSub7', pdf: '/files/CroxX_foliar_CaBMg.pdf', img: 'https://croxx-fertilizer.de/images/croxx_foliar_cabmg_plus_5l.jpg', logo: "https://croxx-fertilizer.de/images/camg_Benefit.jpg", packs: '100ml / 250ml / 500ml / 1l / 5l / 1000l' },
+  { category: 'foliar', slug: 'cabmg', nameKey: 'foliar.prodName7', subKey: 'foliar.prodSub7', pdf: '/files/CroxX_foliar_CaBMg.pdf', img: 'https://croxx-fertilizer.de/images/croxx_foliar_cabmg_plus_5l.jpg', logo: "https://croxx-fertilizer.de/images/camg_Benefit.jpg", packs: '100ml / 250ml / 500ml / 1l / 5l' },
   { category: 'foliar', slug: 'si15', nameKey: 'foliar.prodName8', subKey: 'foliar.prodSub8', pdf: '/files/CroxX_foliar_Si15.pdf', img: 'https://croxx-fertilizer.de/images/croxx_foliar_si_15_5l.jpg', logo: "https://croxx-fertilizer.de/images/SI15_Benefit1.jpg" },
-  { category: 'micro', slug: '6fe-eddha', nameKey: 'micro.prodName0', subKey: 'micro.prodSub0', pdf: '/files/CroxX_micro_6FE_EDDHA.pdf', img: 'https://croxx-fertilizer.de/images/croxx_micro_fe-eddha_1kg.jpg', logo: "https://croxx-fertilizer.de/images/_ce.jpg", packs: '100g / 500g' },
+  { category: 'micro', slug: '6fe-eddha', nameKey: 'micro.prodName0', subKey: 'micro.prodSub0', pdf: '/files/CroxX_micro_6FE_EDDHA.pdf', img: 'https://croxx-fertilizer.de/images/croxx_micro_fe-eddha_1kg.jpg', logo: "https://croxx-fertilizer.de/images/_ce.jpg", packs: '100g / 250g / 500g' },
   { category: 'micro', slug: 'iron-13-fe-edta', nameKey: 'micro.prodName1', subKey: 'micro.prodSub1', pdf: '/files/CroxX_micro_Iron_13_Fe_EDTA.pdf', img: 'https://croxx-fertilizer.de/images/croxx_micro_fe-edta_1kg.jpg', logo: "https://croxx-fertilizer.de/images/_ce.jpg" },
   { category: 'micro', slug: 'zinc-15-edta', nameKey: 'micro.prodName2', subKey: 'micro.prodSub2', pdf: '/files/CroxX_micro_Zinc_15_EDTA.pdf', img: 'https://croxx-fertilizer.de/images/croxx_micro_zn-edta_1kg.jpg', logo: "https://croxx-fertilizer.de/images/_ce.jpg" },
   { category: 'micro', slug: 'mix', nameKey: 'micro.prodName3', subKey: 'micro.prodSub3', pdf: '/files/CroxX_micro_Mix.pdf', img: 'https://croxx-fertilizer.de/images/croxx_micro_mix_beutel_5kg.jpg', logo: "https://croxx-fertilizer.de/images/_ce.jpg" },
@@ -48,19 +47,19 @@ const ALL_PRODUCTS = [
   { category: 'micro', slug: 'boron', nameKey: 'micro.prodName6', subKey: 'micro.prodSub6', pdf: '/files/CroxX_micro_Boron.pdf', img: 'https://croxx-fertilizer.de/images/croxx_micro_boron_1l_vr.jpg', logo: "https://croxx-fertilizer.de/images/_ce.jpg" },
   { category: 'micro', slug: 'bormo', nameKey: 'micro.prodName7', subKey: 'micro.prodSub7', pdf: '/files/CroxX_micro_BorMo.pdf', img: 'https://croxx-fertilizer.de/images/croxx_micro_bormo_1l.jpg', logo: "https://croxx-fertilizer.de/images/_ce.jpg", packs: '100ml / 250ml / 500ml / 1l / 5l' },
   { category: 'micro', slug: 'bzn', nameKey: 'micro.prodName8', subKey: 'micro.prodSub8', pdf: '/files/CroxX_micro_BZn.pdf', img: 'https://croxx-fertilizer.de/images/croxx_karton_micro_bzn_A2.jpg', logo: "https://croxx-fertilizer.de/images/_ce.jpg" },
-  { category: 'solub', slug: 'calcipower', nameKey: 'solub.prodName0', subKey: 'solub.prodSub0', pdf: '/files/CroxX_solub_Calcipower.pdf', img: 'https://croxx-fertilizer.de/images/croxx_solub_calcipower_A1.jpg', logo: "https://croxx-fertilizer.de/images/_ce.jpg", packs: '100g / 5kg / 25kg' },
+  { category: 'solub', slug: 'calcipower', nameKey: 'solub.prodName0', subKey: 'solub.prodSub0', pdf: '/files/CroxX_solub_Calcipower.pdf', img: 'https://croxx-fertilizer.de/images/croxx_solub_calcipower_A1.jpg', logo: "https://croxx-fertilizer.de/images/_ce.jpg", packs: '5kg / 25kg' },
   { category: 'solub', slug: 'calmagpower', nameKey: 'solub.prodName1', subKey: 'solub.prodSub1', pdf: '/files/CroxX_solub_CalMagpower.pdf', img: 'https://croxx-fertilizer.de/images/croxx_solub_calmagpower_A2.jpg', logo: "https://croxx-fertilizer.de/images/_ce.jpg" },
-  { category: 'solub', slug: 'npk', nameKey: 'solub.prodName2', subKey: 'solub.prodSub2', pdf: '/files/CroxX_solub_NPK.pdf', img: 'https://croxx-fertilizer.de/images/croxx_solub.jpg', logo: "https://croxx-fertilizer.de/images/_ce.jpg" },
+  { category: 'solub', slug: 'npk', nameKey: 'solub.prodName2', subKey: 'solub.prodSub2', pdf: '/files/CroxX_solub_NPK.pdf', img: 'https://croxx-fertilizer.de/images/croxx_solub.jpg', logo: "https://croxx-fertilizer.de/images/_ce.jpg", hidden: true },
   { category: 'solub', slug: '13-40-13', nameKey: 'solub.prodName3', subKey: 'solub.prodSub2', pdf: '/files/CroxX_solub_13_40_13.pdf', img: 'https://croxx-fertilizer.de/images/croxx_solub.jpg', logo: "https://croxx-fertilizer.de/images/_ce.jpg", packs: '1kg / 2.5kg / 25kg' },
   { category: 'solub', slug: '19-19-19', nameKey: 'solub.prodName4', subKey: 'solub.prodSub2', pdf: '/files/CroxX_solub_19_19_19.pdf', img: 'https://croxx-fertilizer.de/images/croxx_solub.jpg', logo: "https://croxx-fertilizer.de/images/_ce.jpg", packs: '100g / 1kg / 2.5kg / 25kg' },
   { category: 'solub', slug: '0-9-47', nameKey: 'solub.prodName5', subKey: 'solub.prodSub2', pdf: '/files/CroxX_solub_0_9_47.pdf', img: 'https://croxx-fertilizer.de/images/croxx_solub.jpg', logo: "https://croxx-fertilizer.de/images/_ce.jpg", packs: '1kg / 2.5kg / 25kg' },
   { category: 'solub', slug: '0-39-37', nameKey: 'solub.prodName6', subKey: 'solub.prodSub2', pdf: '/files/CroxX_solub_0_39_37.pdf', img: 'https://croxx-fertilizer.de/images/croxx_solub.jpg', logo: "https://croxx-fertilizer.de/images/_ce.jpg", packs: '1kg / 2.5kg / 25kg' },
-  { category: 'solub', slug: '16-8-24-2mgo', nameKey: 'solub.prodName7', subKey: 'solub.prodSub2', pdf: '/files/CroxX_solub_16_8_24_2MgO.pdf', img: 'https://croxx-fertilizer.de/images/croxx_solub.jpg', logo: "https://croxx-fertilizer.de/images/_ce.jpg", packs: '25kg' },
+  { category: 'solub', slug: '16-8-24-2mgo', nameKey: 'solub.prodName7', subKey: 'solub.prodSub2', pdf: '/files/CroxX_solub_16_8_24_2MgO.pdf', img: 'https://croxx-fertilizer.de/images/croxx_solub.jpg', logo: "https://croxx-fertilizer.de/images/_ce.jpg", packs: '1kg / 5kg / 25kg' },
   { category: 'stabil', slug: '21', nameKey: 'stabil.prodName0', subKey: 'stabil.prodSub0', pdf: '/files/CroxX_stabil_21.pdf', img: 'https://croxx-fertilizer.de/images/croxx_stabil_as_21.jpg', logo: "https://croxx-fertilizer.de/images/_ce.jpg", packs: '5kg / 25kg' },
-  { category: 'stabil', slug: '12-12-17-2mgo-te', nameKey: 'stabil.prodName1', subKey: 'stabil.prodSub1', pdf: '/files/CroxX_stabil_12_60_00.pdf', img: 'https://croxx-fertilizer.de/images/croxx_stabil_12_12_17.jpg', logo: "https://croxx-fertilizer.de/images/_ce.jpg" },
+  { category: 'stabil', slug: '12-12-17-2mgo-te', nameKey: 'stabil.prodName1', subKey: 'stabil.prodSub1', pdf: '/files/CroxX_stabil_12_60_00.pdf', img: 'https://croxx-fertilizer.de/images/croxx_stabil_12_12_17.jpg', logo: "https://croxx-fertilizer.de/images/_ce.jpg", packs: '5kg / 25kg' },
   { category: 'gran', slug: '12-12-17-sop', nameKey: 'gran.prodName0', subKey: 'gran.prodSub0', pdf: '/files/CroxX_gran_12_11_18_2MgO_TE.pdf', img: 'https://croxx-fertilizer.de/images/croxx_gran_12-12-172MgOTE.jpg', logo: "https://croxx-fertilizer.de/images/_ce.jpg", packs: '25kg' },
   { category: 'microgran', slug: 'kickstart-10-45', nameKey: 'microgran.prodName0', subKey: 'microgran.prodSub0', pdf: '/files/CroxX_microgran_Kickstart_10_45.pdf', img: 'https://croxx-fertilizer.de/images/croxx_microgran_kickstart.jpg', logo: "https://croxx-fertilizer.de/images/_ce.jpg" },
-  { category: 'cote', slug: 'cote', nameKey: 'cote.prodName0', subKey: 'cote.prodSub0', pdf: '/files/CroxX_cote_15_19_15_TE_6M.pdf', img: 'https://croxx-fertilizer.de/images/croxx_cote_A2.jpg', logo: "", packs: '100g / 1kg / 10kg / 25kg' },
+  { category: 'cote', slug: 'cote', nameKey: 'cote.prodName0', subKey: 'cote.prodSub0', pdf: '/files/CroxX_cote_15_19_15_TE_6M.pdf', img: 'https://croxx-fertilizer.de/images/croxx_cote_A2.jpg', logo: "", packs: '100g' },
   { category: 'inhibitors', slug: 'uplus', name: "Uplus⁺", subKey: 'inhibitors.prodSub0', pdf: '/files/CroxX_Uplus.pdf', img: 'https://croxx-fertilizer.de/images/croxx_ibc_Uplus_A1.jpg', logo: "https://croxx-fertilizer.de/images/_footprint_ce.jpg" },
   { category: 'inhibitors', slug: 'nplus', name: "Nplus⁺", subKey: 'inhibitors.prodSub1', pdf: '/files/CroxX_Nplus.pdf', img: 'https://croxx-fertilizer.de/images/croxx_ibc_Nplus_A1.jpg', logo: "https://croxx-fertilizer.de/images/_footprint_ce.jpg" },
   { category: 'inhibitors', slug: 'n2-stabil', name: "N2 stabil", subKey: 'inhibitors.prodSub2', pdf: '/files/CroxX_N2_stabil.pdf', img: 'https://croxx-fertilizer.de/images/croxx_ibc_N2_stabil_A1.jpg', logo: "https://croxx-fertilizer.de/images/_footprint_ce.jpg" },
@@ -70,29 +69,8 @@ const ALL_PRODUCTS = [
   { category: 'inhibitors', slug: 'double-protection', name: "Double ProtectioN", subKey: 'inhibitors.prodSub6', pdf: '/files/CroxX_Double_ProtectioN.pdf', img: 'https://croxx-fertilizer.de/images/croxx_ibc_double_protectionN_A1.jpg', logo: "https://croxx-fertilizer.de/images/_ce.jpg" },
 ];
 
-// Products CroxX India sells – exactly the client's product list (category/slug).
-// Only these appear on the website: product pages, QR pages, search, downloads.
-export const SELLING = [
-  'foliar/cabmg',
-  'micro/6fe-eddha',
-  'micro/bormo',
-  'micro/multitop-1',
-  'stim/activator',
-  'stim/activator-17',
-  'stim/algae',
-  'cote/cote',
-  'gran/12-12-17-sop',
-  'solub/0-39-37',
-  'solub/0-9-47',
-  'solub/13-40-13',
-  'solub/16-8-24-2mgo',
-  'solub/19-19-19',
-  'solub/calcipower',
-  'stabil/21',
-];
-
-export const PRODUCTS = ALL_PRODUCTS.filter((p) => SELLING.includes(`${p.category}/${p.slug}`));
-export const VISIBLE_PRODUCTS = PRODUCTS;
+// Products that can be found and opened (hidden ones keep their old URL working only).
+export const VISIBLE_PRODUCTS = PRODUCTS.filter((p) => !p.hidden);
 
 export const productPath = (p) => `/product/${p.category}/${p.slug}`;
 

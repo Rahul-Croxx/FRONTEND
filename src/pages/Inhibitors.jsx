@@ -109,7 +109,7 @@ function Inhibitors() {
       {/* Products List */}
       <section className="ih-products-section">
         <div className="ih-products-container">
-          {products.filter((prod) => findProduct("inhibitors", prod.slug)).map((prod, idx) => (
+          {products.map((prod, idx) => (
             <div className="ih-product-card" key={idx} id={prod.name ? prod.name.replace(/\s+/g, "_") : ""}>
               <div className="ih-product-img-wrapper">
                 <img src={prod.img} alt={prod.name} className="ih-product-img" />
@@ -145,6 +145,7 @@ function Inhibitors() {
           <Link to="/solub" className="ih-cat-pill">CroxX <strong>solub</strong></Link>
           <Link to="/stabil" className="ih-cat-pill">CroxX <strong>stabil</strong></Link>
           <Link to="/gran" className="ih-cat-pill">CroxX <strong>gran</strong></Link>
+          <Link to="/microgran" className="ih-cat-pill">CroxX <strong>microgran</strong></Link>
           <Link to="/cote" className="ih-cat-pill">CroxX <strong>cote</strong></Link>
         </div>
       </section>

@@ -13,6 +13,7 @@ import { ExternalLink, Plane } from 'lucide-react';
 import { COMPANY_INDIA, COMPANY_GERMANY, SOCIAL_LINKS } from './data/contact';
 
 import Home from './pages/Home';
+import Inhibitors from './pages/Inhibitors';
 import Company from './pages/Company';
 import Stim from './pages/Stim';
 import Foliar from './pages/Foliar';
@@ -20,6 +21,7 @@ import Micro from './pages/Micro';
 import Solub from './pages/Solub';
 import Stabil from './pages/Stabil';
 import Gran from './pages/Gran';
+import Microgran from './pages/Microgran';
 import Cote from './pages/Cote';
 import Downloads from './pages/Downloads';
 import Footprint from './pages/Footprint';
@@ -233,6 +235,7 @@ function App() {
             <div className="nav-item-dropdown">
               <span className="nav-link" style={{cursor: 'pointer'}}>{t("nav.products")}</span>
               <div className="dropdown-menu">
+                <Link to="/inhibitors" className="dropdown-item">{t("nav.inhibitors")}</Link>
                 <Link to="/#specialty-fertilizers" className="dropdown-item">{t("nav.specialty")}</Link>
               </div>
             </div>
@@ -242,6 +245,7 @@ function App() {
             <div className="nav-item-dropdown">
               <Link to="/downloads" className="nav-link">{t("nav.downloads")}</Link>
               <div className="dropdown-menu">
+                <Link to="/downloads#inhibitors_enhancers" className="dropdown-item">{t("nav.inhibitors")}</Link>
                 <Link to="/downloads#specialty_fertilizers" className="dropdown-item">{t("nav.specialty")}</Link>
               </div>
             </div>
@@ -256,7 +260,7 @@ function App() {
         {/* Main Content */}
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/inhibitors" element={<NotFound />} />
+          <Route path="/inhibitors" element={<Inhibitors />} />
           <Route path="/company" element={<Company />} />
           <Route path="/stim" element={<Stim />} />
           <Route path="/foliar" element={<Foliar />} />
@@ -264,7 +268,7 @@ function App() {
           <Route path="/solub" element={<Solub />} />
           <Route path="/stabil" element={<Stabil />} />
           <Route path="/gran" element={<Gran />} />
-          <Route path="/microgran" element={<NotFound />} />
+          <Route path="/microgran" element={<Microgran />} />
           <Route path="/cote" element={<Cote />} />
           <Route path="/downloads" element={<Downloads />} />
           <Route path="/footprint" element={<Footprint />} />
@@ -308,12 +312,14 @@ function App() {
               </div>
               <h4 className="footer-title">{t("footer.productRange")}</h4>
               <ul className="footer-list">
+                <li><Link to="/inhibitors" style={{ display: 'flex', alignItems: 'center', color: 'inherit', textDecoration: 'none' }}><ChevronRight size={16} className="footer-chevron" style={{ marginRight: '8px' }} />{t("nav.inhibitors")}</Link></li>
                 <li><Link to="/stim" style={{ display: 'flex', alignItems: 'center', color: 'inherit', textDecoration: 'none' }}><ChevronRight size={16} className="footer-chevron" style={{ marginRight: '8px' }} /> <span>CroxX <strong>stim</strong></span></Link></li>
                 <li><Link to="/foliar" style={{ display: 'flex', alignItems: 'center', color: 'inherit', textDecoration: 'none' }}><ChevronRight size={16} className="footer-chevron" style={{ marginRight: '8px' }} /> <span>CroxX <strong>foliar</strong></span></Link></li>
                 <li><Link to="/micro" style={{ display: 'flex', alignItems: 'center', color: 'inherit', textDecoration: 'none' }}><ChevronRight size={16} className="footer-chevron" style={{ marginRight: '8px' }} /> <span>CroxX <strong>micro</strong></span></Link></li>
                 <li><Link to="/solub" style={{ display: 'flex', alignItems: 'center', color: 'inherit', textDecoration: 'none' }}><ChevronRight size={16} className="footer-chevron" style={{ marginRight: '8px' }} /> <span>CroxX <strong>solub</strong></span></Link></li>
                 <li><Link to="/stabil" style={{ display: 'flex', alignItems: 'center', color: 'inherit', textDecoration: 'none' }}><ChevronRight size={16} className="footer-chevron" style={{ marginRight: '8px' }} /> <span>CroxX <strong>stabil</strong></span></Link></li>
                 <li><Link to="/gran" style={{ display: 'flex', alignItems: 'center', color: 'inherit', textDecoration: 'none' }}><ChevronRight size={16} className="footer-chevron" style={{ marginRight: '8px' }} /> <span>CroxX <strong>gran</strong></span></Link></li>
+                <li><Link to="/microgran" style={{ display: 'flex', alignItems: 'center', color: 'inherit', textDecoration: 'none' }}><ChevronRight size={16} className="footer-chevron" style={{ marginRight: '8px' }} /> <span>CroxX <strong>microgran</strong></span></Link></li>
                 <li><Link to="/cote" style={{ display: 'flex', alignItems: 'center', color: 'inherit', textDecoration: 'none' }}><ChevronRight size={16} className="footer-chevron" style={{ marginRight: '8px' }} /> <span>CroxX <strong>cote</strong></span></Link></li>
               </ul>
             </div>

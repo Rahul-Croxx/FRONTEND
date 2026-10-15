@@ -107,6 +107,7 @@ function Foliar() {
             <p className="ih-subtitle">{t("foliar.heroSubtitle")}</p>
             <h1 className="ih-title" style={{ color: '#aa4f26' }}>CroxX <span style={{ fontWeight: 'bold' }}>foliar</span></h1>
             <p className="ih-desc">{t("foliar.heroDesc")}</p>
+            <a href="/files/Leaflet_CroxX_Foliar-Fertilizers.pdf" target="_blank" rel="noopener noreferrer" className="ih-btn-foliar">{t("common.leaflet")}</a>
           </div>
         </div>
       </div>
@@ -114,7 +115,7 @@ function Foliar() {
       {/* Products List */}
       <section className="ih-products-section">
         <div className="ih-products-container">
-          {products.filter((prod) => findProduct("foliar", prod.slug)).map((prod, idx) => (
+          {products.map((prod, idx) => (
             <div className="ih-product-card" key={idx} id={prod.anchor ? prod.anchor.replace(/\s+/g, "_") : ""}>
               <div className="ih-product-img-wrapper">
                 <img src={prod.img} alt={prod.name} className="ih-product-img" />
@@ -146,12 +147,14 @@ function Foliar() {
       {/* Categories Grid */}
       <section className="ih-categories-section">
         <div className="ih-categories-grid">
+          <Link to="/inhibitors" className="ih-cat-pill">{t("nav.inhibitors")}</Link>
           <Link to="/stim" className="ih-cat-pill">CroxX <strong>stim</strong></Link>
           <Link to="/foliar" className="ih-cat-pill">CroxX <strong>foliar</strong></Link>
           <Link to="/micro" className="ih-cat-pill">CroxX <strong>micro</strong></Link>
           <Link to="/solub" className="ih-cat-pill">CroxX <strong>solub</strong></Link>
           <Link to="/stabil" className="ih-cat-pill">CroxX <strong>stabil</strong></Link>
           <Link to="/gran" className="ih-cat-pill">CroxX <strong>gran</strong></Link>
+          <Link to="/microgran" className="ih-cat-pill">CroxX <strong>microgran</strong></Link>
           <Link to="/cote" className="ih-cat-pill">CroxX <strong>cote</strong></Link>
         </div>
       </section>

@@ -123,7 +123,7 @@ function Stim() {
     {
       name: t("stim.prodName13"), anchor: tEn("stim.prodName13"), subtitle: t("stim.prodSub13"),
       slug: "activator",
-      pdf: "/files/CroxX_stim_Activator.pdf",
+      pdf: "/files/CroxX_stim_Activator_Granulars.pdf",
       comboLogo: null,
       img: "https://croxx-fertilizer.de/images/croxx_stim_activator.jpg"
     }
@@ -142,6 +142,7 @@ function Stim() {
             <p className="ih-subtitle">{t("stim.heroSubtitle")}</p>
             <h1 className="ih-title" style={{ color: '#c1272d' }}>CroxX <span style={{ fontWeight: 'bold' }}>stim</span></h1>
             <p className="ih-desc">{t("stim.heroDesc")}</p>
+            <a href="/files/Leaflet_CroxX_Stim.pdf" target="_blank" rel="noopener noreferrer" className="ih-btn-red">{t("common.leaflet")}</a>
           </div>
         </div>
       </div>
@@ -149,7 +150,7 @@ function Stim() {
       {/* Products List */}
       <section className="ih-products-section">
         <div className="ih-products-container">
-          {products.filter((prod) => findProduct("stim", prod.slug)).map((prod, idx) => (
+          {products.map((prod, idx) => (
             <div className="ih-product-card" key={idx} id={prod.anchor ? prod.anchor.replace(/\s+/g, "_") : ""}>
               <div className="ih-product-img-wrapper">
                 <img src={prod.img} alt={prod.name} className="ih-product-img" />
@@ -181,12 +182,14 @@ function Stim() {
       {/* Categories Grid */}
       <section className="ih-categories-section">
         <div className="ih-categories-grid">
+          <Link to="/inhibitors" className="ih-cat-pill">{t("nav.inhibitors")}</Link>
           <Link to="/stim" className="ih-cat-pill">CroxX <strong>stim</strong></Link>
           <Link to="/foliar" className="ih-cat-pill">CroxX <strong>foliar</strong></Link>
           <Link to="/micro" className="ih-cat-pill">CroxX <strong>micro</strong></Link>
           <Link to="/solub" className="ih-cat-pill">CroxX <strong>solub</strong></Link>
           <Link to="/stabil" className="ih-cat-pill">CroxX <strong>stabil</strong></Link>
           <Link to="/gran" className="ih-cat-pill">CroxX <strong>gran</strong></Link>
+          <Link to="/microgran" className="ih-cat-pill">CroxX <strong>microgran</strong></Link>
           <Link to="/cote" className="ih-cat-pill">CroxX <strong>cote</strong></Link>
         </div>
       </section>
