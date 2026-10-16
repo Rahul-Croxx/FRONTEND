@@ -46,6 +46,12 @@ function QrInfo({ product, pageLang, details, accent }) {
         </div>
       </div>
 
+      {data.gazette && (
+        <p className="qri-gazette">
+          <span className="qri-gazette-label">{L.gazette}:</span> <strong>{pick(data.gazette)}</strong>
+        </p>
+      )}
+
       {description && (
         <div className="qri-block">
           <h3>{L.description}</h3>

@@ -33,7 +33,8 @@
       "value": "Value",
       "crop": "Crop",
       "dose": "Dosage",
-      "application": "Application"
+      "application": "Application",
+      "gazette": "Gazette Notification number and Date"
     },
     "ta": {
       "heading": "QR குறியீட்டு தகவல்",
@@ -45,7 +46,8 @@
       "value": "மதிப்பு",
       "crop": "பயிர்",
       "dose": "அளவு",
-      "application": "பயன்பாட்டு முறை"
+      "application": "பயன்பாட்டு முறை",
+      "gazette": "அரசிதழ் அறிவிப்பு எண் மற்றும் தேதி"
     },
     "hi": {
       "heading": "QR कोड जानकारी",
@@ -57,7 +59,8 @@
       "value": "मान",
       "crop": "फसल",
       "dose": "मात्रा",
-      "application": "प्रयोग विधि"
+      "application": "प्रयोग विधि",
+      "gazette": "राजपत्र अधिसूचना संख्या एवं दिनांक"
     },
     "te": {
       "heading": "QR కోడ్ సమాచారం",
@@ -69,7 +72,8 @@
       "value": "విలువ",
       "crop": "పంట",
       "dose": "మోతాదు",
-      "application": "వినియోగ విధానం"
+      "application": "వినియోగ విధానం",
+      "gazette": "గెజిట్ నోటిఫికేషన్ సంఖ్య మరియు తేదీ"
     },
     "ml": {
       "heading": "QR കോഡ് വിവരങ്ങൾ",
@@ -81,11 +85,19 @@
       "value": "മൂല്യം",
       "crop": "വിള",
       "dose": "അളവ്",
-      "application": "പ്രയോഗ രീതി"
+      "application": "പ്രയോഗ രീതി",
+      "gazette": "ഗസറ്റ് വിജ്ഞാപന നമ്പറും തീയതിയും"
     }
   },
   "products": {
     "stim/algae": {
+      "gazette": {
+        "en": "S.O. 876 (E) dated 16-2-2026",
+        "ta": "S.O. 876 (E), தேதி 16-2-2026",
+        "hi": "एस.ओ. 876 (ई) दिनांक 16-2-2026",
+        "te": "S.O. 876 (E), తేదీ 16-2-2026",
+        "ml": "S.O. 876 (E), തീയതി 16-2-2026"
+      },
       "title": {
         "en": "Seaweed Extract – Ascophyllum nodosum 15% (Liquid)",
         "ta": "கடற்பாசி சாறு – Ascophyllum nodosum 15% (திரவம்)",
@@ -171,6 +183,13 @@
       }
     },
     "stim/activator-17": {
+      "gazette": {
+        "en": "S.O. 876 (E) dated 16-2-2026",
+        "ta": "S.O. 876 (E), தேதி 16-2-2026",
+        "hi": "एस.ओ. 876 (ई) दिनांक 16-2-2026",
+        "te": "S.O. 876 (E), తేదీ 16-2-2026",
+        "ml": "S.O. 876 (E), തീയതി 16-2-2026"
+      },
       "title": {
         "en": "Humates 12.5% (Liquid)",
         "ta": "ஹியூமேட்டுகள் 12.5% (திரவம்)",
@@ -246,6 +265,13 @@
       }
     },
     "stim/activator": {
+      "gazette": {
+        "en": "S.O. 876 (E) dated 16-2-2026",
+        "ta": "S.O. 876 (E), தேதி 16-2-2026",
+        "hi": "एस.ओ. 876 (ई) दिनांक 16-2-2026",
+        "te": "S.O. 876 (E), తేదీ 16-2-2026",
+        "ml": "S.O. 876 (E), തീയതി 16-2-2026"
+      },
       "title": {
         "en": "Humic Acid 51% (Granular)",
         "ta": "ஹியூமிக் அமிலம் 51% (குருணை)",
