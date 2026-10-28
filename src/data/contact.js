@@ -28,8 +28,8 @@ export const SOCIAL_LINKS = {
   youtube: 'https://www.youtube.com/@CroxXIndia',
 };
 
-// Photo used in the "Contact" sections: green crop field (web-sized copy of public/bg.png).
-export const CONTACT_PHOTO = '/images/contact-field.jpg';
+// Photo used in the "Contact" sections: Münster harbour (CroxX Germany).
+export const CONTACT_PHOTO = '/images/company-muenster-harbour.jpg';
 
 // Link for "Contact" buttons: e-mail when available, otherwise a phone call, otherwise the distributors page.
 export const contactHref = () => {
