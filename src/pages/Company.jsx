@@ -13,7 +13,7 @@ function Company() {
     <main className="company-page">
       {/* Hero Header */}
       <div className="company-hero-container">
-        <img src="/contact_office.jpg" alt="CroxX Building" className="company-hero-img" />
+        <img src="/images/company-muenster-harbour.jpg" alt="CroxX GmbH & Co. KG – Münster harbour" className="company-hero-img" />
       </div>
 
       <div className="company-content-container">
@@ -61,8 +61,9 @@ function Company() {
 
       {/* Footer Image Gallery */}
       <div className="company-gallery-container">
-        <img src="/factory_tanks.jpg" alt="Wocklum Tanks" className="gallery-img" />
-        <img src="/factory_aerial.jpg" alt="Wocklum Factory Aerial" className="gallery-img" />
+        <img src="/images/company-warehouse.jpg" alt="CroxX warehouse at the Münster harbour" className="gallery-img" loading="lazy" />
+        <img src="/images/wocklum-tank.jpg" alt="Wocklum Chemie tank" className="gallery-img" loading="lazy" />
+        <img src="/images/wocklum-factory-aerial.jpg" alt="Wocklum Chemie factory – aerial view" className="gallery-img" loading="lazy" />
       </div>
 
       {/* Back to top */}

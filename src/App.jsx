@@ -165,9 +165,6 @@ function App() {
     localStorage.setItem("i18nextLng", code);
     setShowLangMenu(false);
   };
-  const oldChangeLanguage = (e) => {
-    i18n.changeLanguage(e.target.value);
-  };
 
   return (
     <Router>

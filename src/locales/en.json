@@ -325,7 +325,7 @@
     "title": "Privacy Policy",
     "subtitle": "Commitment to Data Protection and Privacy under Indian IT Laws",
     "s1Title": "1. Introduction",
-    "s1Body": "CroxX (\"we\", \"our\", \"us\") respects your privacy and is committed to protecting your personal data. This Privacy Policy applies to our website and services, outlining our practices regarding the collection, use, and disclosure of your information in compliance with the Information Technology Act, 2000, the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011, and the Digital Personal Data Protection (DPDP) Act, 2023 of India.",
+    "s1Body": "We respect your privacy and are committed to protecting your personal data. This Privacy Policy applies to our website and services, outlining our practices regarding the collection, use, and disclosure of your information in compliance with the Information Technology Act, 2000, the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011, and the Digital Personal Data Protection (DPDP) Act, 2023 of India.",
     "s2Title": "2. Information We Collect",
     "s2Intro": "We may collect the following types of information when you interact with our website or services:",
     "s2Items": [
@@ -389,8 +389,10 @@
     "s9Title": "9. Changes to this Policy",
     "s9Body": "We may update this Privacy Policy from time to time to reflect changes in legal requirements or our operational practices. The revised policy will be effective immediately upon posting on this website.",
     "lastUpdated": "Last Updated: September 2026",
-    "germanyTitle": "Privacy Notice of CroxX GmbH & Co. KG (Germany)",
-    "germanyNote": "The following privacy notice is published by CroxX GmbH & Co. KG for its website www.croxx-fertilizer.de. It is shown here in its original English version."
+    "germanyTitle": "Privacy Notice of CroxX GmbH & Co. KG",
+    "germanyNote": "The privacy notice of CroxX GmbH & Co. KG for its website www.croxx-fertilizer.de is available on their website for reference.",
+    "germanyLink": "Read the CroxX GmbH & Co. KG privacy notice →",
+    "phoneLabel": "Phone:"
   },
   "productPage": {
     "description": "Product description",

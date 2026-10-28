@@ -1,25 +1,11 @@
 import { useTranslation } from 'react-i18next';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { ChevronUp } from 'lucide-react';
 import './PrivacyPolicy.css';
-import { PRIVACY_GERMANY, PRIVACY_GERMANY_VERSION } from '../data/privacyGermany';
+import { COMPANY_INDIA, COMPANY_GERMANY } from '../data/contact';
 
-// Turns "[text](url)" into links and line breaks into <br />
-function RichText({ text }) {
-  const lines = text.split('\n');
-  return lines.map((line, li) => {
-    const parts = [];
-    const re = /\[([^\]]+)\]\(([^)]+)\)/g;
-    let last = 0, m;
-    while ((m = re.exec(line))) {
-      if (m.index > last) parts.push(line.slice(last, m.index));
-      parts.push(<a key={m.index} href={m[2]} target="_blank" rel="noopener noreferrer">{m[1]}</a>);
-      last = re.lastIndex;
-    }
-    if (last < line.length) parts.push(line.slice(last));
-    return <React.Fragment key={li}>{parts}{li < lines.length - 1 && <br />}</React.Fragment>;
-  });
-}
+// Privacy notice of CroxX GmbH & Co. KG – linked for reference only
+const GERMANY_PRIVACY_URL = `${COMPANY_GERMANY.website}/datenschutz.html`;
 
 function PrivacyPolicy() {
   const { t } = useTranslation();
@@ -90,9 +76,14 @@ function PrivacyPolicy() {
             <h2>{t("privacy.s8Title")}</h2>
             <p>{t("privacy.s8Intro")}</p>
             <div className="grievance-contact">
-              <p><strong>{t("privacy.nameLabel")}</strong> [Grievance Officer Name]</p>
-              <p><strong>{t("privacy.emailLabel")}</strong> privacy@croxx-fertilizer.in</p>
-              <p><strong>{t("privacy.addressLabel")}</strong> CroxX India, [Insert India Office Address]</p>
+              <p><strong>{t("privacy.nameLabel")}</strong> {COMPANY_INDIA.legalName}</p>
+              {COMPANY_INDIA.email && (
+                <p><strong>{t("privacy.emailLabel")}</strong> <a href={`mailto:${COMPANY_INDIA.email}`}>{COMPANY_INDIA.email}</a></p>
+              )}
+              {COMPANY_INDIA.phone && (
+                <p><strong>{t("privacy.phoneLabel")}</strong> <a href={`tel:${COMPANY_INDIA.phone.replace(/\s+/g, '')}`}>{COMPANY_INDIA.phone}</a></p>
+              )}
+              <p><strong>{t("privacy.addressLabel")}</strong> {COMPANY_INDIA.address}</p>
               <p><strong>{t("privacy.hoursLabel")}</strong> {t("privacy.hoursValue")}</p>
             </div>
 
@@ -102,17 +93,15 @@ function PrivacyPolicy() {
             <p className="last-updated">{t("privacy.lastUpdated")}</p>
           </div>
 
-          {/* Original privacy notice of CroxX GmbH & Co. KG (Germany) */}
-          <div className="policy-box policy-box-germany" lang="en">
+          {/* CroxX GmbH & Co. KG privacy notice – link to the original for reference */}
+          <div className="policy-box policy-box-germany">
             <h2 className="policy-germany-title">{t("privacy.germanyTitle")}</h2>
             <p className="policy-germany-note">{t("privacy.germanyNote")}</p>
-            <p className="last-updated policy-germany-version">{PRIVACY_GERMANY_VERSION}</p>
-            {PRIVACY_GERMANY.map((b, i) => {
-              if (b.h) return <h2 key={i}>{b.h}</h2>;
-              if (b.h3) return <h3 key={i}>{b.h3}</h3>;
-              if (b.ul) return <ul key={i}>{b.ul.map((x, j) => <li key={j}>{x}</li>)}</ul>;
-              return <p key={i}><RichText text={b.p} /></p>;
-            })}
+            <p>
+              <a href={GERMANY_PRIVACY_URL} target="_blank" rel="noopener noreferrer">
+                {t("privacy.germanyLink")}
+              </a>
+            </p>
           </div>
         </div>
       </section>
